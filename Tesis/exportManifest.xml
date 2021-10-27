@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <ns2:ExportManifest xmlns:ns2="http://www.pentaho.com/schema/">
-    <ExportManifestInformation exportDate="26-10-2021 07:23:55 COT" exportBy="admin" rootFolder="/public/" manifestVersion="2"/>
+    <ExportManifestInformation exportDate="27-10-2021 12:34:23 COT" exportBy="admin" rootFolder="/public/" manifestVersion="2"/>
     <ExportManifestEntity path="Tesis">
         <ExportManifestProperty>
             <EntityMetaData name="Tesis" createdDate="2021-05-25T17:57:36.999-05:00" isFolder="true" path="Tesis" isHidden="false" isSchedulable="true" locale="es_US" title="Tesis"/>

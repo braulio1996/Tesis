@@ -49,6 +49,24 @@
          <Url>jdbc:postgresql://localhost:5432/bd</Url>
          <User>brau</User>
       </Connection>
+      <Connection id="querry_9" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="querry_10" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="querry_11" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
    </DataSources>
    <DataAccess access="public" connection="querry_1" id="querry_1" type="sql">
       <Name>querry_1</Name>
@@ -99,6 +117,7 @@ group by r.ventas, r2.activo_financiero;]]></Query>
       <Parameters>
          <Parameter default="var" name="var" type="String"/>
          <Parameter default="var2" name="var2" type="String"/>
+         <Parameter default="var3" name="var3" type="String"/>
       </Parameters>
       <Query><![CDATA[SELECT a from generate_series(1, 10) as a;]]></Query>
    </DataAccess>
@@ -130,9 +149,44 @@ group by r.costos, r2.inventario;]]></Query>
       <Columns/>
       <Parameters>
          <Parameter default="var2" name="var2" type="String"/>
+         <Parameter default="d_inv2" name="d_inv2" type="String"/>
       </Parameters>
       <Query><![CDATA[select round(365*(r2.inventario::numeric/${var2}::numeric)/(r.costos::numeric),3) as "RESULTADO", round(sum(r2.inventario::numeric/${var2}::numeric),3) as "INVENTARIO PROMEDIO",r.costos as "COSTO DE VENTAS"
 from resultados as r join resultados2 as r2 on r.compania_codigo=r2.compania_codigo
 group by r.costos, r2.inventario;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="querry_9" id="querry_9" type="sql">
+      <Name>querry_9</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="var3" name="var3" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select round((r.compras::numeric)/(r2.oblig_comer::numeric/${var3}::numeric),3) as "RESULTADO",r.compras as"COMPRAS",round(r2.oblig_comer::numeric/${var3}::numeric,3) as "CUENTAS POR PAGAR PROMEDIO"
+from resultados as r join resultados2 as r2 on r.compania_codigo=r2.compania_codigo
+group by r.compras,r2.oblig_comer;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="querry_10" id="querry_10" type="sql">
+      <Name>querry_10</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="var3" name="var3" type="String"/>
+         <Parameter default="d_cuentas_x_pagar2" name="d_cuentas_x_pagar2" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select round((365*(r2.oblig_comer::numeric/${var3}::numeric))/(r.compras::numeric),3) as "RESULTADO",round(r2.oblig_comer::numeric/${var3}::numeric,3) as "CUENTAS POR PAGAR PROMEDIO",r.compras as"COMPRAS"
+from resultados as r join resultados2 as r2 on r.compania_codigo=r2.compania_codigo
+group by r.compras,r2.oblig_comer;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="querry_11" id="querry_11" type="sql">
+      <Name>querry_11</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="rotacion_act_ttl" name="rotacion_act_ttl" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select round (r.ventas::numeric/r2.total_activo::numeric,4)as"RESULTADO",r.ventas as "VENTAS",r2.total_activo as "ACTIVOS TOTALES"
+from resultados as r join resultados2 as r2 on r.compania_codigo=r2.compania_codigo
+group by r.ventas ,r2.total_activo ;]]></Query>
    </DataAccess>
 </CDADescriptor>
