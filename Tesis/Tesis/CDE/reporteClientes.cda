@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CDADescriptor>
+   <DataSources>
+      <Connection id="Querry" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/base</Url>
+         <User>brau</User>
+      </Connection>
+   </DataSources>
+   <DataAccess access="public" connection="Querry" id="Querry" type="sql">
+      <Name>Querry</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[select id as "CODIGO", nombre as "NOMBRES",identificacion as "CI/ RUC", direccion as "DIRECCION",telefono1 as "TELEFONO",telefono2 as "CELULAR"
+from scafp_fac_cliente;]]></Query>
+   </DataAccess>
+</CDADescriptor>

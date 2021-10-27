@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CDADescriptor>
+   <DataSources>
+      <Connection id="fecha1" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/base</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="fecha2" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/base</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="articulo" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/base</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="tablasimple" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/base</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="general" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/base</Url>
+         <User>brau</User>
+      </Connection>
+   </DataSources>
+   <DataAccess access="public" connection="fecha1" id="fecha1" type="sql">
+      <Name>fecha1</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="fecha1" name="fecha1" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select fecha from scafp_fac_compra
+order by fecha asc;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="fecha2" id="fecha2" type="sql">
+      <Name>fecha2</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="fecha2" name="fecha2" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select fecha from scafp_fac_compra
+order by fecha desc;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="articulo" id="articulo" type="sql">
+      <Name>articulo</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="fecha1" name="fecha1" type="String"/>
+         <Parameter default="fecha2" name="fecha2" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select pro.nombre as "Descripción",dp.valor_unitario as "Precio unitario"
+from scafp_inv_producto as pro join scafp_fac_detallecompra dp on dp.producto=pro.id
+JOIN scafp_fac_compra as com on com.id=dp.compra_id
+WHERE com.fecha BETWEEN to_date(${fecha1}, 'yyyy-mm-dd') AND to_date(${fecha2}, 'yyyy-mm-dd')
+group by pro.nombre,dp.cantidad,dp.valor_unitario,com.total,com.fecha;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="tablasimple" id="tablasimple" type="sql">
+      <Name>tablasimple</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="a" name="a" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select pro.nombre as "Descripción",SUM(dp.cantidad) as "Cantidad" ,dp.valor_unitario as "Precio unitario",com.total as "Total de costo"
+from scafp_inv_producto as pro join scafp_fac_detallecompra dp on dp.producto=pro.id
+JOIN scafp_fac_compra as com on com.id=dp.compra_id
+WHERE pro.nombre=${a}
+group by pro.nombre,dp.cantidad,dp.valor_unitario,com.total,com.fecha;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="general" id="general" type="sql">
+      <Name>general</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="fecha1" name="fecha1" type="String"/>
+         <Parameter default="fecha2" name="fecha2" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select com.fecha as "Fecha",dp.producto as "Código",pro.nombre as "Descripción",SUM(dp.cantidad) as "Cantidad" ,dp.valor_unitario as "Precio unitario",com.total as "Total de costo"
+from scafp_inv_producto as pro join scafp_fac_detallecompra dp on dp.producto=pro.id
+JOIN scafp_fac_compra as com on com.id=dp.compra_id
+WHERE com.fecha BETWEEN to_date(${fecha1}, 'yyyy-mm-dd') AND to_date(${fecha2}, 'yyyy-mm-dd')
+group by dp.producto,dp.valor_unitario,pro.nombre,com.fecha,com.total;]]></Query>
+   </DataAccess>
+</CDADescriptor>

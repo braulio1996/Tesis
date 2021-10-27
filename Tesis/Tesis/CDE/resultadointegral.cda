@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CDADescriptor>
+   <DataSources>
+      <Connection id="fecha1" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="fecha2" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="subventas" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="ventas" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="detalle" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="ventas_t" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="gastos" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="detalle_gasto" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="Egresos" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="inv_inicial" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="compras" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="compras_2" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="devoluciones" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="inv_final" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="u1" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="k1" type="kettle.TransFromFile">
+         <KtrFile>../../load_demo.ktr</KtrFile>
+         <variables datarow-name="name" variable-name="name"/>
+         <variables datarow-name="name2" variable-name="name2"/>
+         <variables datarow-name="u1" variable-name="u1"/>
+         <variables datarow-name="u2" variable-name="u2"/>
+         <variables datarow-name="u3" variable-name="u3"/>
+         <variables datarow-name="u4" variable-name="u4"/>
+         <variables datarow-name="u5" variable-name="u5"/>
+         <variables datarow-name="u6" variable-name="u6"/>
+         <variables datarow-name="u7" variable-name="u7"/>
+         <variables datarow-name="u8" variable-name="u8"/>
+         <variables datarow-name="u9" variable-name="u9"/>
+         <variables datarow-name="name3" variable-name="name3"/>
+         <variables datarow-name="name4" variable-name="name4"/>
+         <variables datarow-name="name5" variable-name="name5"/>
+         <variables datarow-name="name6" variable-name="name6"/>
+      </Connection>
+   </DataSources>
+   <DataAccess access="public" connection="fecha1" id="fecha1" type="sql">
+      <Name>fecha1</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="fecha1" name="fecha1" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select distinct fecha from estado_resultado_integral
+order by fecha asc;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="fecha2" id="fecha2" type="sql">
+      <Name>fecha2</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="fecha2" name="fecha2" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select distinct fecha from estado_resultado_integral
+order by fecha desc;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="subventas" id="subventas" type="sql">
+      <Name>subventas</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="fecha1" name="fecha1" type="String"/>
+         <Parameter default="fecha2" name="fecha2" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select distinct   eri.detalle, (select sum(a.subtotal) as sub from estado_resultado_integral as a where a.id=eri.id)
+from estado_resultado_integral as eri join scafp_conta_cuenta as scc on scc.id=eri.codigo_contable
+where scc.descripcion ='Ventas' and eri.fecha BETWEEN ${fecha1} AND ${fecha2};]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="ventas" id="ventas" type="sql">
+      <Name>ventas</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="fecha1" name="fecha1" type="String"/>
+         <Parameter default="fecha2" name="fecha2" type="String"/>
+         <Parameter default="ventas" name="ventas" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select scc.descripcion as "Ingresos por actividad ordinaria",sum(eri.subtotal) as " "
+from estado_resultado_integral eri join scafp_conta_cuenta scc on scc.id =eri.codigo_contable 
+where eri.fecha between ${fecha1} AND ${fecha2} and scc.descripcion='Ventas'
+group by scc.descripcion;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="detalle" id="detalle" type="sql">
+      <Name>detalle</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="fecha1" name="fecha1" type="String"/>
+         <Parameter default="fecha2" name="fecha2" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select eri.detalle as " ",sum(eri.subtotal) as " "
+from estado_resultado_integral eri join scafp_conta_cuenta scc on scc.id =eri.codigo_contable 
+where eri.fecha between ${fecha1} AND ${fecha2} and scc.descripcion='Ventas'
+group by eri.detalle;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="ventas_t" id="ventas_t" type="sql">
+      <Name>ventas_t</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="fecha1" name="fecha1" type="String"/>
+         <Parameter default="fecha2" name="fecha2" type="String"/>
+         <Parameter default="tingresos" name="tingresos" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select sum(eri.subtotal) as "Total Ingresos "
+from estado_resultado_integral eri join scafp_conta_cuenta scc on scc.id =eri.codigo_contable 
+where eri.fecha between ${fecha1} AND ${fecha2} and scc.descripcion='Ventas'
+group by scc.descripcion;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="gastos" id="gastos" type="sql">
+      <Name>gastos</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="fecha1" name="fecha1" type="String"/>
+         <Parameter default="fecha2" name="fecha2" type="String"/>
+         <Parameter default="gastos" name="gastos" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select sum(eri.subtotal) as " "
+from estado_resultado_integral eri join scafp_conta_cuenta scc on scc.id =eri.codigo_contable 
+where eri.fecha between ${fecha1} AND ${fecha2} and scc.descripcion='Gastos Operacionales'
+group by scc.descripcion;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="detalle_gasto" id="detalle_gasto" type="sql">
+      <Name>detalle_gasto</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="fecha1" name="fecha1" type="String"/>
+         <Parameter default="fecha2" name="fecha2" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select eri.detalle as " ",sum(eri.subtotal) as " "
+from estado_resultado_integral eri join scafp_conta_cuenta scc on scc.id =eri.codigo_contable 
+where eri.fecha between ${fecha1} AND ${fecha2} and scc.descripcion='Gastos Operacionales'
+group by eri.detalle;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="Egresos" id="Egresos" type="sql">
+      <Name>Egresos</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="fecha1" name="fecha1" type="String"/>
+         <Parameter default="fecha2" name="fecha2" type="String"/>
+         <Parameter default="costoVentas" name="costoVentas" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select distinct (select ABS(COALESCE(sum(e2.total),0)+COALESCE(e2.inicio+e2.fin)) as " " from egresos e2 where e2.fecha between ${fecha1} and ${fecha2} GROUP by e2.inicio ,e2.fin)
+from egresos;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="inv_inicial" id="inv_inicial" type="sql">
+      <Name>inv_inicial</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="fecha1" name="fecha1" type="String"/>
+         <Parameter default="fecha2" name="fecha2" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select distinct d1 as " " ,inicio as " " from egresos
+where fecha_2 BETWEEN ${fecha1} AND ${fecha2};]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="compras" id="compras" type="sql">
+      <Name>compras</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="fecha1" name="fecha1" type="String"/>
+         <Parameter default="fecha2" name="fecha2" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select distinct (select distinct detalle as " " from egresos e2 where e2.detalle='compras'),(select ABS(COALESCE(sum(e2.total),0)) as " " from egresos e2 where e2.detalle='compras' and e2.fecha between ${fecha1} and ${fecha2})
+from egresos;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="compras_2" id="compras_2" type="sql">
+      <Name>compras_2</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="fecha1" name="fecha1" type="String"/>
+         <Parameter default="fecha2" name="fecha2" type="String"/>
+         <Parameter default="compras_var" name="compras_var" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select distinct (select ABS(COALESCE(sum(e2.total),0)) as " " from egresos e2 where e2.detalle='compras' and e2.fecha between ${fecha1} and ${fecha2}),(select distinct detalle as " " from egresos e2 where e2.detalle='compras')
+from egresos;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="devoluciones" id="devoluciones" type="sql">
+      <Name>devoluciones</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="fecha1" name="fecha1" type="String"/>
+         <Parameter default="fecha2" name="fecha2" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select distinct (select distinct detalle as " " from egresos e2 where e2.detalle='devolución en compra'),(select ABS(COALESCE(sum(e2.total),0)) as " " from egresos e2 where e2.detalle='devolución en compra' and e2.fecha between ${fecha1} and ${fecha2})
+from egresos;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="inv_final" id="inv_final" type="sql">
+      <Name>inv_final</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="fecha1" name="fecha1" type="String"/>
+         <Parameter default="fecha2" name="fecha2" type="String"/>
+         <Parameter default="totalIngreso" name="totalIngreso" type="String"/>
+      </Parameters>
+      <Query><![CDATA[SELECT distinct d2 as " ", fin as " " from egresos
+where fecha between ${fecha1} and ${fecha2};]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="u1" id="u1" type="sql">
+      <Name>u1</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="u1" name="u1" type="String"/>
+         <Parameter default="fecha1" name="fecha1" type="String"/>
+         <Parameter default="fecha2" name="fecha2" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select utlidades_antes_impuestos as "UTILIDAD ANTES DE IMPUESTOS"
+from resultados;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="k1" id="k1" type="kettle">
+      <Name>k1</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="$(name)" name="name" type="String"/>
+         <Parameter default="$(name2)" name="name2" type="String"/>
+         <Parameter default="$(u1)" name="u1" type="String"/>
+         <Parameter default="$(42)" name="u2" type="String"/>
+         <Parameter default="$(u3)" name="u3" type="String"/>
+         <Parameter default="$(u4)" name="u4" type="String"/>
+         <Parameter default="$(u5)" name="u5" type="String"/>
+         <Parameter default="$(u6)" name="u6" type="String"/>
+         <Parameter default="$(u7)" name="u7" type="String"/>
+         <Parameter default="$(u8)" name="u8" type="String"/>
+         <Parameter default="$(u9)" name="u9" type="String"/>
+         <Parameter default="$(name3)" name="name3" type="String"/>
+         <Parameter default="$(name4)" name="name4" type="String"/>
+         <Parameter default="$(name5)" name="name5" type="String"/>
+         <Parameter default="$(name6)" name="name6" type="String"/>
+      </Parameters>
+      <Query><![CDATA[p1]]></Query>
+   </DataAccess>
+</CDADescriptor>

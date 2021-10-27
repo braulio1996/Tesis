@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CDADescriptor>
+   <DataSources>
+      <Connection id="Querry_efectivo" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="Querry_efectivo_d" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="Querry_activo" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="Querry_activo_d" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="Querry_INVENTARIO" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="Querry_INVENTARIO_d" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="Querry_servicios" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="Querry_servicios_d" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="Querry_PPE" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="Querry_PPE_d" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="Querry_obligacionesC" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="Querry_obligacionesC_d" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="Querry_obligacionesL" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="Querry_obligacionesL_d" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="Querry_obligacionesL_d_d" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="Querry_obligacionesIESS" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="Querry_obliga_IESS_d" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="Querry_obligacionesFiscal" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="Querry_obliga_Fiscal_d" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="Querry_capital" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="Querry_capital_d" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="Querry_reserva" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="Querry_reserval_d" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="Querry_reserva_d_d" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="Querry_resultados" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="Querry_resultados_d" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="k1" type="kettle.TransFromFile">
+         <KtrFile>../../load_demo3.ktr</KtrFile>
+         <variables datarow-name="var1" variable-name="var1"/>
+         <variables datarow-name="var2" variable-name="var2"/>
+         <variables datarow-name="var3" variable-name="var3"/>
+         <variables datarow-name="var4" variable-name="var4"/>
+         <variables datarow-name="var5" variable-name="var5"/>
+         <variables datarow-name="var6" variable-name="var6"/>
+         <variables datarow-name="var7" variable-name="var7"/>
+         <variables datarow-name="var8" variable-name="var8"/>
+         <variables datarow-name="var9" variable-name="var9"/>
+         <variables datarow-name="var10" variable-name="var10"/>
+         <variables datarow-name="var11" variable-name="var11"/>
+         <variables datarow-name="var12" variable-name="var12"/>
+         <variables datarow-name="var13" variable-name="var13"/>
+         <variables datarow-name="var14" variable-name="var14"/>
+         <variables datarow-name="var15" variable-name="var15"/>
+         <variables datarow-name="var16" variable-name="var16"/>
+         <variables datarow-name="var17" variable-name="var17"/>
+         <variables datarow-name="var18" variable-name="var18"/>
+         <variables datarow-name="var19" variable-name="var19"/>
+         <variables datarow-name="var20" variable-name="var20"/>
+      </Connection>
+   </DataSources>
+   <DataAccess access="public" connection="Querry_efectivo" id="Querry_efectivo" type="sql">
+      <Name>Querry_efectivo</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="fecha1" name="fecha1" type="String"/>
+         <Parameter default="fecha2" name="fecha2" type="String"/>
+         <Parameter default="efectivo_equivalente" name="efectivo_equivalente" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select round(sum(eri.debe::numeric)-sum(eri.haber::numeric),2) as "Efectivo Equivalente al efectivo"
+from estado_resultado_integral as eri join scafp_conta_cuenta as scc on scc.id=eri.codigo_contable
+where scc.descripcion ='Efectivo Equivalente al efectivo'
+and eri.fecha BETWEEN ${fecha1} AND ${fecha2};]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="Querry_efectivo_d" id="Querry_efectivo_d"
+               type="sql">
+      <Name>Querry_efectivo_d</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="fecha1" name="fecha1" type="String"/>
+         <Parameter default="fecha2" name="fecha2" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select  distinct eri.detalle as " ",(select  round(sum(a.debe::numeric)-sum(a.haber::numeric),2) as " " from estado_resultado_integral as a where a.id=eri.id)
+from estado_resultado_integral as eri join scafp_conta_cuenta as scc on scc.id=eri.codigo_contable
+where scc.descripcion ='Efectivo Equivalente al efectivo' and eri.fecha BETWEEN ${fecha1} AND ${fecha2};]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="Querry_activo" id="Querry_activo" type="sql">
+      <Name>Querry_activo</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="fecha1" name="fecha1" type="String"/>
+         <Parameter default="fecha2" name="fecha2" type="String"/>
+         <Parameter default="activo_financiero" name="activo_financiero" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select round(sum(eri.debe::numeric)-sum(eri.haber::numeric),2) as "Activo Financiero"
+from estado_resultado_integral as eri join scafp_conta_cuenta as scc on scc.id=eri.codigo_contable
+where scc.descripcion ='Activo Financiero'
+and eri.fecha BETWEEN ${fecha1} AND ${fecha2};]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="Querry_activo_d" id="Querry_activo_d" type="sql">
+      <Name>Querry_activo_d</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="fecha1" name="fecha1" type="String"/>
+         <Parameter default="fecha2" name="fecha2" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select  distinct eri.detalle as " ",(select  round(sum(a.debe::numeric)-sum(a.haber::numeric),2) as " " from estado_resultado_integral as a where a.id=eri.id)
+from estado_resultado_integral as eri join scafp_conta_cuenta as scc on scc.id=eri.codigo_contable
+where scc.descripcion ='Activo Financiero' and eri.fecha BETWEEN ${fecha1} AND ${fecha2};]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="Querry_INVENTARIO" id="Querry_INVENTARIO"
+               type="sql">
+      <Name>Querry_INVENTARIO</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="fecha1" name="fecha1" type="String"/>
+         <Parameter default="fecha2" name="fecha2" type="String"/>
+         <Parameter default="inventario" name="inventario" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select round(sum(eri.debe::numeric-eri.haber::numeric),2) as "Inventario"
+from estado_resultado_integral as eri join scafp_conta_cuenta as scc on scc.id=eri.codigo_contable
+where scc.descripcion ='Inventario'
+and eri.fecha BETWEEN ${fecha1} AND ${fecha2};]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="Querry_INVENTARIO_d" id="Querry_INVENTARIO_d"
+               type="sql">
+      <Name>Querry_INVENTARIO_d</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="fecha1" name="fecha1" type="String"/>
+         <Parameter default="fecha2" name="fecha2" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select  distinct eri.detalle as " ",(select  round(sum(a.debe::numeric)-sum(a.haber::numeric),2) as " " from estado_resultado_integral as a where a.id=eri.id)
+from estado_resultado_integral as eri join scafp_conta_cuenta as scc on scc.id=eri.codigo_contable
+where scc.descripcion ='Inventario'
+and eri.fecha BETWEEN ${fecha1} AND ${fecha2};]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="Querry_servicios" id="Querry_servicios" type="sql">
+      <Name>Querry_servicios</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="fecha1" name="fecha1" type="String"/>
+         <Parameter default="fecha2" name="fecha2" type="String"/>
+         <Parameter default="servicios_pagosanticipados" name="servicios_pagosanticipados"
+                    type="String"/>
+      </Parameters>
+      <Query><![CDATA[select round(sum(eri.debe::numeric)-sum(eri.haber::numeric),2) as "Servicios y pagos anticipados "
+from estado_resultado_integral as eri join scafp_conta_cuenta as scc on scc.id=eri.codigo_contable
+where scc.descripcion ='Servicios y pagos anticipados '
+and eri.fecha BETWEEN ${fecha1} AND ${fecha2};]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="Querry_servicios_d" id="Querry_servicios_d"
+               type="sql">
+      <Name>Querry_servicios_d</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="fecha1" name="fecha1" type="String"/>
+         <Parameter default="fecha2" name="fecha2" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select  distinct eri.detalle as " ",(select  round(sum(a.debe::numeric)-sum(a.haber::numeric),2) as " " from estado_resultado_integral as a where a.id=eri.id)
+from estado_resultado_integral as eri join scafp_conta_cuenta as scc on scc.id=eri.codigo_contable
+where scc.descripcion ='Servicios y pagos anticipados ' 
+and eri.fecha BETWEEN ${fecha1} AND ${fecha2};]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="Querry_PPE" id="Querry_PPE" type="sql">
+      <Name>Querry_PPE</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="fecha1" name="fecha1" type="String"/>
+         <Parameter default="fecha2" name="fecha2" type="String"/>
+         <Parameter default="ppe" name="ppe" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select abs(round(sum(eri.debe::numeric)-sum(eri.haber::numeric),2)) as "Propiedad Planta y Equipo"
+from estado_resultado_integral as eri join scafp_conta_cuenta as scc on scc.id=eri.codigo_contable
+where scc.descripcion ='Propiedad Planta y Equipo'
+and eri.fecha BETWEEN ${fecha1} AND ${fecha2};]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="Querry_PPE_d" id="Querry_PPE_d" type="sql">
+      <Name>Querry_PPE_d</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="fecha1" name="fecha1" type="String"/>
+         <Parameter default="fecha2" name="fecha2" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select  distinct eri.detalle as " ",(select  round(sum(a.debe::numeric)-sum(a.haber::numeric),2) as " " from estado_resultado_integral as a where a.id=eri.id)
+from estado_resultado_integral as eri join scafp_conta_cuenta as scc on scc.id=eri.codigo_contable
+where scc.descripcion ='Propiedad Planta y Equipo' 
+and eri.fecha BETWEEN ${fecha1} AND ${fecha2};]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="Querry_obligacionesC" id="Querry_obligacionesC"
+               type="sql">
+      <Name>Querry_obligacionesC</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="fecha1" name="fecha1" type="String"/>
+         <Parameter default="fecha2" name="fecha2" type="String"/>
+         <Parameter default="obliga_comer" name="obliga_comer" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select abs(round(sum(eri.debe::numeric)-sum(eri.haber::numeric),2)) as "Obligaciones Comerciales"
+from estado_resultado_integral as eri join scafp_conta_cuenta as scc on scc.id=eri.codigo_contable
+where scc.descripcion ='Obligaciones Comerciales'
+and eri.fecha BETWEEN ${fecha1} AND ${fecha2};]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="Querry_obligacionesC_d" id="Querry_obligacionesC_d"
+               type="sql">
+      <Name>Querry_obligacionesC_d</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="fecha1" name="fecha1" type="String"/>
+         <Parameter default="fecha2" name="fecha2" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select  distinct eri.detalle as " ",(select  abs(round(sum(a.debe::numeric)-sum(a.haber::numeric),2)) as " " from estado_resultado_integral as a where a.id=eri.id)
+from estado_resultado_integral as eri join scafp_conta_cuenta as scc on scc.id=eri.codigo_contable
+where scc.descripcion ='Obligaciones Comerciales'
+and eri.fecha BETWEEN ${fecha1} AND ${fecha2};]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="Querry_obligacionesL" id="Querry_obligacionesL"
+               type="sql">
+      <Name>Querry_obligacionesL</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="fecha1" name="fecha1" type="String"/>
+         <Parameter default="fecha2" name="fecha2" type="String"/>
+         <Parameter default="obliga_labor" name="obliga_labor" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select abs(round(sum(eri.debe::numeric-eri.haber::numeric),2)+r."15%participacion") as "Obligaciones laborales"
+from estado_resultado_integral as eri join scafp_conta_cuenta as scc on scc.id=eri.codigo_contable
+join resultados as r on eri.compania_codigo =r.compania_codigo
+where scc.descripcion ='Obligaciones laborales'
+and eri.fecha BETWEEN ${fecha1} AND ${fecha2}
+group by r."15%participacion";]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="Querry_obligacionesL_d" id="Querry_obligacionesL_d"
+               type="sql">
+      <Name>Querry_obligacionesL_d</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="fecha1" name="fecha1" type="String"/>
+         <Parameter default="fecha2" name="fecha2" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select  distinct eri.detalle as " ",(select  abs(round(sum(a.debe::numeric)-sum(a.haber::numeric),2)) as " " from estado_resultado_integral as a where a.id=eri.id)
+from estado_resultado_integral as eri join scafp_conta_cuenta as scc on scc.id=eri.codigo_contable
+where scc.descripcion ='Obligaciones laborales'
+and eri.fecha BETWEEN ${fecha1} AND ${fecha2};]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="Querry_obligacionesL_d_d"
+               id="Querry_obligacionesL_d_d"
+               type="sql">
+      <Name>Querry_obligacionesL_d_d</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[select '15% participación' || ' ' || 'Trabajadores' AS " ",r."15%participacion" as " " from resultados as r;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="Querry_obligacionesIESS"
+               id="Querry_obligacionesIESS"
+               type="sql">
+      <Name>Querry_obligacionesIESS</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="fecha1" name="fecha1" type="String"/>
+         <Parameter default="fecha2" name="fecha2" type="String"/>
+         <Parameter default="obliga_IESS" name="obliga_IESS" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select abs(round(sum(eri.debe::numeric-eri.haber::numeric),2)) as "Obligaciones con el IESS"
+from estado_resultado_integral as eri join scafp_conta_cuenta as scc on scc.id=eri.codigo_contable
+where scc.descripcion ='Obligaciones con el IESS'
+and eri.fecha BETWEEN ${fecha1} AND ${fecha2};]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="Querry_obliga_IESS_d" id="Querry_obliga_IESS_d"
+               type="sql">
+      <Name>Querry_obliga_IESS_d</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="fecha1" name="fecha1" type="String"/>
+         <Parameter default="fecha2" name="fecha2" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select  distinct eri.detalle as " ",(select  abs(round(sum(a.debe::numeric)-sum(a.haber::numeric),2)) as " " from estado_resultado_integral as a where a.id=eri.id)
+from estado_resultado_integral as eri join scafp_conta_cuenta as scc on scc.id=eri.codigo_contable
+where scc.descripcion ='Obligaciones con el IESS'
+and eri.fecha BETWEEN ${fecha1} AND ${fecha2};]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="Querry_obligacionesFiscal"
+               id="Querry_obligacionesFiscal"
+               type="sql">
+      <Name>Querry_obligacionesFiscal</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="fecha1" name="fecha1" type="String"/>
+         <Parameter default="fecha2" name="fecha2" type="String"/>
+         <Parameter default="obliga_fiscal" name="obliga_fiscal" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select r."25%impuesto" as " " from resultados as r;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="Querry_obliga_Fiscal_d" id="Querry_obliga_Fiscal_d"
+               type="sql">
+      <Name>Querry_obliga_Fiscal_d</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="fecha1" name="fecha1" type="String"/>
+         <Parameter default="fecha2" name="fecha2" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select '25% impuesto a ' || ' ' || ' la renta' AS " ",r."25%impuesto" as " " from resultados as r;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="Querry_capital" id="Querry_capital" type="sql">
+      <Name>Querry_capital</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="fecha1" name="fecha1" type="String"/>
+         <Parameter default="fecha2" name="fecha2" type="String"/>
+         <Parameter default="capital" name="capital" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select abs(round(sum(eri.debe::numeric-eri.haber::numeric),2)) as "Capital"
+from estado_resultado_integral as eri join scafp_conta_cuenta as scc on scc.id=eri.codigo_contable
+where scc.descripcion ='Capital'
+and eri.fecha between ${fecha1} AND ${fecha2}]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="Querry_capital_d" id="Querry_capital_d" type="sql">
+      <Name>Querry_capital_d</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="fecha1" name="fecha1" type="String"/>
+         <Parameter default="fecha2" name="fecha2" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select  distinct eri.detalle as " ",(select  abs(round(sum(a.debe::numeric)-sum(a.haber::numeric),2)) as " " from estado_resultado_integral as a where a.id=eri.id)
+from estado_resultado_integral as eri join scafp_conta_cuenta as scc on scc.id=eri.codigo_contable
+where scc.descripcion ='Capital'
+and eri.fecha between ${fecha1} AND ${fecha2}]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="Querry_reserva" id="Querry_reserva" type="sql">
+      <Name>Querry_reserva</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="fecha1" name="fecha1" type="String"/>
+         <Parameter default="fecha2" name="fecha2" type="String"/>
+         <Parameter default="capital" name="capital" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select round(sum(r."10%reserva"::numeric+r."5%reserva"::numeric),2)  as " " from resultados as r;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="Querry_reserval_d" id="Querry_reserval_d"
+               type="sql">
+      <Name>Querry_reserval_d</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="fecha1" name="fecha1" type="String"/>
+         <Parameter default="fecha2" name="fecha2" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select 'Reserva legal' AS " ",r."10%reserva" as " " from resultados as r;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="Querry_reserva_d_d" id="Querry_reserva_d_d"
+               type="sql">
+      <Name>Querry_reserva_d_d</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="fecha1" name="fecha1" type="String"/>
+         <Parameter default="fecha2" name="fecha2" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select 'Reserva Estatutaria' AS " ",r."5%reserva" as " " from resultados as r;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="Querry_resultados" id="Querry_resultados"
+               type="sql">
+      <Name>Querry_resultados</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="fecha1" name="fecha1" type="String"/>
+         <Parameter default="fecha2" name="fecha2" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select r.utilidad_bruta as " " from resultados as r;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="Querry_resultados_d" id="Querry_resultados_d"
+               type="sql">
+      <Name>Querry_resultados_d</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="fecha1" name="fecha1" type="String"/>
+         <Parameter default="fecha2" name="fecha2" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select 'Utilidad Y/o perdida del ejercicio' AS " ",r.utilidad_bruta as " " from resultados as r;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="k1" id="k1" type="kettle">
+      <Name>k1</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="$(var1)" name="var1" type="String"/>
+         <Parameter default="$(var2)" name="var2" type="String"/>
+         <Parameter default="$(var3)" name="var3" type="String"/>
+         <Parameter default="$(var4)" name="var4" type="String"/>
+         <Parameter default="$(var5)" name="var5" type="String"/>
+         <Parameter default="$(var6)" name="var6" type="String"/>
+         <Parameter default="$(var7)" name="var7" type="String"/>
+         <Parameter default="$(var8)" name="var8" type="String"/>
+         <Parameter default="$(var9)" name="var9" type="String"/>
+         <Parameter default="$(var10)" name="var10" type="String"/>
+         <Parameter default="$(var11)" name="var11" type="String"/>
+         <Parameter default="$(var12)" name="var12" type="String"/>
+         <Parameter default="$(var13)" name="var13" type="String"/>
+         <Parameter default="$(var14)" name="var14" type="String"/>
+         <Parameter default="$(var15)" name="var15" type="String"/>
+         <Parameter default="$(var16)" name="var16" type="String"/>
+         <Parameter default="$(var17)" name="var17" type="String"/>
+         <Parameter default="$(var18)" name="var18" type="String"/>
+         <Parameter default="$(var19)" name="var19" type="String"/>
+         <Parameter default="$(var20)" name="var20" type="String"/>
+      </Parameters>
+      <Query><![CDATA[p1]]></Query>
+   </DataAccess>
+</CDADescriptor>

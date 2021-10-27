@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:ExportManifest xmlns:ns2="http://www.pentaho.com/schema/">
+    <ExportManifestInformation exportDate="26-10-2021 07:23:55 COT" exportBy="admin" rootFolder="/public/" manifestVersion="2"/>
+    <ExportManifestEntity path="Tesis">
+        <ExportManifestProperty>
+            <EntityMetaData name="Tesis" createdDate="2021-05-25T17:57:36.999-05:00" isFolder="true" path="Tesis" isHidden="false" isSchedulable="true" locale="es_US" title="Tesis"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="Tesis/CDE">
+        <ExportManifestProperty>
+            <EntityMetaData name="CDE" createdDate="2021-05-25T17:57:47.726-05:00" isFolder="true" path="Tesis/CDE" isHidden="false" isSchedulable="true" locale="es_US" title="CDE"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="Tesis/CDE/Grafica.js">
+        <ExportManifestProperty>
+            <EntityMetaData name="Grafica.js" createdDate="2021-05-26T00:16:33.512-05:00" isFolder="false" path="Tesis/CDE/Grafica.js" isHidden="false" isSchedulable="true" locale="es_US" title="Grafica.js"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="Tesis/CDE/asientos.cdfde">
+        <ExportManifestProperty>
+            <EntityMetaData name="asientos.cdfde" createdDate="2021-10-22T04:28:28.759-05:00" isFolder="false" path="Tesis/CDE/asientos.cdfde" isHidden="false" isSchedulable="true" locale="es_US" title="asientos.cdfde"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="Tesis/CDE/estadosituacionfinanciera.cda">
+        <ExportManifestProperty>
+            <EntityMetaData name="estadosituacionfinanciera.cda" createdDate="2021-10-03T22:20:57.322-05:00" isFolder="false" path="Tesis/CDE/estadosituacionfinanciera.cda" isHidden="false" isSchedulable="true" locale="es_US" title="estadosituacionfinanciera.cda"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="Tesis/CDE/estadosituacionfinanciera.cdfde">
+        <ExportManifestProperty>
+            <EntityMetaData name="estadosituacionfinanciera.cdfde" createdDate="2021-10-03T18:53:45.327-05:00" isFolder="false" path="Tesis/CDE/estadosituacionfinanciera.cdfde" isHidden="false" isSchedulable="true" locale="es_US" title="estadosituacionfinanciera.cdfde"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="Tesis/CDE/estadosituacionfinanciera.wcdf">
+        <ExportManifestProperty>
+            <EntityMetaData name="estadosituacionfinanciera.wcdf" createdDate="2021-10-03T18:53:45.151-05:00" isFolder="false" path="Tesis/CDE/estadosituacionfinanciera.wcdf" isHidden="false" isSchedulable="true" locale="es_US" description="estadosituacionfinanciera" title="estadosituacionfinanciera"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="Tesis/CDE/librodiario.cda">
+        <ExportManifestProperty>
+            <EntityMetaData name="librodiario.cda" createdDate="2021-07-30T13:42:40.429-05:00" isFolder="false" path="Tesis/CDE/librodiario.cda" isHidden="false" isSchedulable="true" locale="es_US" title="librodiario.cda"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="Tesis/CDE/librodiario.cdfde">
+        <ExportManifestProperty>
+            <EntityMetaData name="librodiario.cdfde" createdDate="2021-07-30T13:13:20.909-05:00" isFolder="false" path="Tesis/CDE/librodiario.cdfde" isHidden="false" isSchedulable="true" locale="es_US" title="librodiario.cdfde"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="Tesis/CDE/librodiario.wcdf">
+        <ExportManifestProperty>
+            <EntityMetaData name="librodiario.wcdf" createdDate="2021-07-30T13:13:20.665-05:00" isFolder="false" path="Tesis/CDE/librodiario.wcdf" isHidden="false" isSchedulable="true" locale="es_US" description="librodiario" title="librodiario"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="Tesis/CDE/librodiario_tmp.cda">
+        <ExportManifestProperty>
+            <EntityMetaData name="librodiario_tmp.cda" createdDate="2021-10-04T13:13:11.678-05:00" isFolder="false" path="Tesis/CDE/librodiario_tmp.cda" isHidden="false" isSchedulable="true" locale="es_US" title="librodiario_tmp.cda"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="Tesis/CDE/librodiario_tmp.cdfde">
+        <ExportManifestProperty>
+            <EntityMetaData name="librodiario_tmp.cdfde" createdDate="2021-10-04T13:13:11.057-05:00" isFolder="false" path="Tesis/CDE/librodiario_tmp.cdfde" isHidden="false" isSchedulable="true" locale="es_US" title="librodiario_tmp.cdfde"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="Tesis/CDE/librodiario_tmp.wcdf">
+        <ExportManifestProperty>
+            <EntityMetaData name="librodiario_tmp.wcdf" createdDate="2021-10-04T13:13:10.741-05:00" isFolder="false" path="Tesis/CDE/librodiario_tmp.wcdf" isHidden="false" isSchedulable="true" locale="es_US" title="librodiario_tmp.wcdf"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="Tesis/CDE/listadoProveedores.cda">
+        <ExportManifestProperty>
+            <EntityMetaData name="listadoProveedores.cda" createdDate="2021-05-25T19:59:32.173-05:00" isFolder="false" path="Tesis/CDE/listadoProveedores.cda" isHidden="false" isSchedulable="true" locale="es_US" title="listadoProveedores.cda"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="Tesis/CDE/listadoProveedores.cdfde">
+        <ExportManifestProperty>
+            <EntityMetaData name="listadoProveedores.cdfde" createdDate="2021-05-25T19:56:30.898-05:00" isFolder="false" path="Tesis/CDE/listadoProveedores.cdfde" isHidden="false" isSchedulable="true" locale="es_US" title="listadoProveedores.cdfde"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="Tesis/CDE/listadoProveedores.wcdf">
+        <ExportManifestProperty>
+            <EntityMetaData name="listadoProveedores.wcdf" createdDate="2021-05-25T19:56:30.654-05:00" isFolder="false" path="Tesis/CDE/listadoProveedores.wcdf" isHidden="false" isSchedulable="true" locale="es_US" description="listado Proveedores del software SCAFP" title="listadoProveedores"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="Tesis/CDE/listadoProveedores_Grafica.js">
+        <ExportManifestProperty>
+            <EntityMetaData name="listadoProveedores_Grafica.js" createdDate="2021-05-26T01:53:18.074-05:00" isFolder="false" path="Tesis/CDE/listadoProveedores_Grafica.js" isHidden="false" isSchedulable="true" locale="es_US" title="listadoProveedores_Grafica.js"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="Tesis/CDE/load_demo.ktr">
+        <ExportManifestProperty>
+            <EntityMetaData name="load_demo.ktr" createdDate="2021-09-23T17:40:51.267-05:00" isFolder="false" path="Tesis/CDE/load_demo.ktr" isHidden="true" isSchedulable="true" locale="es_US" title="load_demo"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="Tesis/CDE/movimiento_inventario.cda">
+        <ExportManifestProperty>
+            <EntityMetaData name="movimiento_inventario.cda" createdDate="2021-05-28T14:35:57.135-05:00" isFolder="false" path="Tesis/CDE/movimiento_inventario.cda" isHidden="false" isSchedulable="true" locale="es_US" title="movimiento_inventario.cda"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="Tesis/CDE/movimiento_inventario.cdfde">
+        <ExportManifestProperty>
+            <EntityMetaData name="movimiento_inventario.cdfde" createdDate="2021-05-28T14:17:13.839-05:00" isFolder="false" path="Tesis/CDE/movimiento_inventario.cdfde" isHidden="false" isSchedulable="true" locale="es_US" title="movimiento_inventario.cdfde"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="Tesis/CDE/movimiento_inventario.wcdf">
+        <ExportManifestProperty>
+            <EntityMetaData name="movimiento_inventario.wcdf" createdDate="2021-05-28T14:17:13.587-05:00" isFolder="false" path="Tesis/CDE/movimiento_inventario.wcdf" isHidden="false" isSchedulable="true" locale="es_US" description="movimiento_inventario" title="movimiento_inventario"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="Tesis/CDE/pdi.cdfde">
+        <ExportManifestProperty>
+            <EntityMetaData name="pdi.cdfde" createdDate="2021-09-23T16:15:47.970-05:00" isFolder="false" path="Tesis/CDE/pdi.cdfde" isHidden="false" isSchedulable="true" locale="es_US" title="pdi.cdfde"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="Tesis/CDE/pdi.wcdf">
+        <ExportManifestProperty>
+            <EntityMetaData name="pdi.wcdf" createdDate="2021-09-23T16:15:47.710-05:00" isFolder="false" path="Tesis/CDE/pdi.wcdf" isHidden="false" isSchedulable="true" locale="es_US" description="pdi" title="pdi"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="Tesis/CDE/ratiosfinancieros.cda">
+        <ExportManifestProperty>
+            <EntityMetaData name="ratiosfinancieros.cda" createdDate="2021-10-23T11:03:42.552-05:00" isFolder="false" path="Tesis/CDE/ratiosfinancieros.cda" isHidden="false" isSchedulable="true" locale="es_US" title="ratiosfinancieros.cda"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="Tesis/CDE/ratiosfinancieros.cdfde">
+        <ExportManifestProperty>
+            <EntityMetaData name="ratiosfinancieros.cdfde" createdDate="2021-10-23T09:13:26.185-05:00" isFolder="false" path="Tesis/CDE/ratiosfinancieros.cdfde" isHidden="false" isSchedulable="true" locale="es_US" title="ratiosfinancieros.cdfde"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="Tesis/CDE/ratiosfinancieros.wcdf">
+        <ExportManifestProperty>
+            <EntityMetaData name="ratiosfinancieros.wcdf" createdDate="2021-10-23T09:13:25.959-05:00" isFolder="false" path="Tesis/CDE/ratiosfinancieros.wcdf" isHidden="false" isSchedulable="true" locale="es_US" description="ratiosfinancieros" title="ratiosfinancieros"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="Tesis/CDE/reporteClientes.cda">
+        <ExportManifestProperty>
+            <EntityMetaData name="reporteClientes.cda" createdDate="2021-05-28T16:08:45.720-05:00" isFolder="false" path="Tesis/CDE/reporteClientes.cda" isHidden="false" isSchedulable="true" locale="es_US" title="reporteClientes.cda"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="Tesis/CDE/reporteClientes.cdfde">
+        <ExportManifestProperty>
+            <EntityMetaData name="reporteClientes.cdfde" createdDate="2021-05-28T15:55:24.857-05:00" isFolder="false" path="Tesis/CDE/reporteClientes.cdfde" isHidden="false" isSchedulable="true" locale="es_US" title="reporteClientes.cdfde"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="Tesis/CDE/reporteClientes.wcdf">
+        <ExportManifestProperty>
+            <EntityMetaData name="reporteClientes.wcdf" createdDate="2021-05-28T15:55:24.508-05:00" isFolder="false" path="Tesis/CDE/reporteClientes.wcdf" isHidden="false" isSchedulable="true" locale="es_US" description="reporteClientes" title="reporteClientes"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="Tesis/CDE/resultadointegral.cda">
+        <ExportManifestProperty>
+            <EntityMetaData name="resultadointegral.cda" createdDate="2021-08-04T17:32:24.959-05:00" isFolder="false" path="Tesis/CDE/resultadointegral.cda" isHidden="false" isSchedulable="true" locale="es_US" title="resultadointegral.cda"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="Tesis/CDE/resultadointegral.cdfde">
+        <ExportManifestProperty>
+            <EntityMetaData name="resultadointegral.cdfde" createdDate="2021-08-04T16:55:27.906-05:00" isFolder="false" path="Tesis/CDE/resultadointegral.cdfde" isHidden="false" isSchedulable="true" locale="es_US" title="resultadointegral.cdfde"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="Tesis/CDE/resultadointegral.wcdf">
+        <ExportManifestProperty>
+            <EntityMetaData name="resultadointegral.wcdf" createdDate="2021-08-04T16:55:27.675-05:00" isFolder="false" path="Tesis/CDE/resultadointegral.wcdf" isHidden="false" isSchedulable="true" locale="es_US" description="resultadointegral" title="resultadointegral"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="Tesis/CDE/resumen_compra.cda">
+        <ExportManifestProperty>
+            <EntityMetaData name="resumen_compra.cda" createdDate="2021-05-25T18:05:17.728-05:00" isFolder="false" path="Tesis/CDE/resumen_compra.cda" isHidden="false" isSchedulable="true" locale="es_US" title="resumen_compra.cda"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="Tesis/CDE/resumen_compra.cdfde">
+        <ExportManifestProperty>
+            <EntityMetaData name="resumen_compra.cdfde" createdDate="2021-05-25T17:58:05.544-05:00" isFolder="false" path="Tesis/CDE/resumen_compra.cdfde" isHidden="false" isSchedulable="true" locale="es_US" title="resumen_compra.cdfde"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="Tesis/CDE/resumen_compra.wcdf">
+        <ExportManifestProperty>
+            <EntityMetaData name="resumen_compra.wcdf" createdDate="2021-05-25T17:58:05.479-05:00" isFolder="false" path="Tesis/CDE/resumen_compra.wcdf" isHidden="false" isSchedulable="true" locale="es_US" description="resumen_compra" title="resumen_compra"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="Tesis/CDE/resumen_compra_Grafica.js">
+        <ExportManifestProperty>
+            <EntityMetaData name="resumen_compra_Grafica.js" createdDate="2021-05-26T00:16:33.464-05:00" isFolder="false" path="Tesis/CDE/resumen_compra_Grafica.js" isHidden="false" isSchedulable="true" locale="es_US" title="resumen_compra_Grafica.js"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="Tesis/OLAP">
+        <ExportManifestProperty>
+            <EntityMetaData name="OLAP" createdDate="2021-06-02T03:41:40.742-05:00" isFolder="true" path="Tesis/OLAP" isHidden="false" isSchedulable="true" locale="es_US" title="OLAP"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="Tesis/OLAP/OLAP1.xjpivot">
+        <ExportManifestProperty>
+            <EntityMetaData name="OLAP1.xjpivot" createdDate="2021-06-02T03:46:13.154-05:00" isFolder="false" path="Tesis/OLAP/OLAP1.xjpivot" isHidden="false" isSchedulable="true" locale="es_US" description="OLAP1.xjpivot" title="OLAP1.xjpivot"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="Tesis/load_demo.ktr">
+        <ExportManifestProperty>
+            <EntityMetaData name="load_demo.ktr" createdDate="2021-09-23T17:25:07.011-05:00" isFolder="false" path="Tesis/load_demo.ktr" isHidden="true" isSchedulable="true" locale="es_US" title="load_demo"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+</ns2:ExportManifest>

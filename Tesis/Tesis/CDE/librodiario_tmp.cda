@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CDADescriptor>
+   <DataSources>
+      <Connection id="fecha1" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="fecha2" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="grafica" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="tablasimple" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="tablageneral" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+   </DataSources>
+   <DataAccess access="public" connection="fecha1" id="fecha1" type="sql">
+      <Name>fecha1</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="fecha1" name="fecha1" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select distinct fecha from scafp_conta_asiento
+order by fecha asc;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="fecha2" id="fecha2" type="sql">
+      <Name>fecha2</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="fecha2" name="fecha2" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select distinct fecha from scafp_conta_asiento
+order by fecha desc;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="grafica" id="grafica" type="sql">
+      <Name>grafica</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="fecha1" name="fecha1" type="String"/>
+         <Parameter default="fecha2" name="fecha2" type="String"/>
+      </Parameters>
+      <Query><![CDATA[SELECT sca.codigo ,da.debe 
+FROM scafp_conta_asiento as sca join scafp_conta_detalle_asiento as da on sca.id=da.asiento_id 
+join scafp_conta_cuenta as scc on scc.id =da.codigo_contable
+WHERE sca.fecha BETWEEN to_date(${fecha1}, 'yyyy-mm-dd') AND to_date(${fecha2}, 'yyyy-mm-dd')
+group by sca.codigo ,sca.fecha, sca.detalle,da.id,scc.codigo
+order by da.id ;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="tablasimple" id="tablasimple" type="sql">
+      <Name>tablasimple</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="detalle" name="detalle" type="String"/>
+      </Parameters>
+      <Query><![CDATA[SELECT sca.fecha, scc.codigo , sca.detalle, da.debe, da.haber 
+FROM scafp_conta_detalle_asiento as da 
+join scafp_conta_asiento as sca on sca.id=da.asiento_id 
+join scafp_conta_cuenta as scc on scc.id =da.codigo_contable 
+where sca.codigo=${detalle}
+group by sca.fecha, scc.codigo , sca.detalle, da.debe, da.haber,da.id 
+order by da.id ;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="tablageneral" id="tablageneral" type="sql">
+      <Name>tablageneral</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="detalle" name="detalle" type="String"/>
+      </Parameters>
+      <Query><![CDATA[SELECT sca.codigo as "ASIENTO",sca.fecha as"FECHA", scc.codigo as"CÓDIGO" , sca.detalle as"DETALLE", da.debe as"DEBE", da.haber as"HABER"
+FROM scafp_conta_detalle_asiento as da 
+join scafp_conta_asiento as sca on sca.id=da.asiento_id 
+join scafp_conta_cuenta as scc on scc.id =da.codigo_contable 
+group by sca.codigo,sca.fecha, scc.codigo , sca.detalle, da.debe, da.haber,da.id 
+order by da.id ;]]></Query>
+   </DataAccess>
+</CDADescriptor>

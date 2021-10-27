@@ -1,0 +1,668 @@
+{
+  "components" : {
+    "rows" : [
+      {
+        "id" : "STANDARDCOMPONENTS",
+        "name" : "Standard",
+        "parent" : "UnIqEiD",
+        "properties" : [
+          {
+            "name" : "Group",
+            "type" : "Label",
+            "value" : "Standard"
+          }
+        ],
+        "type" : "Label",
+        "typeDesc" : "\u003Ci\u003EGroup\u003C/i\u003E"
+      },
+      {
+        "id" : "40b094d1-7caa-cad1-d919-06b309500e10",
+        "parent" : "STANDARDCOMPONENTS",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "savebutton"
+          },
+          {
+            "name" : "label",
+            "type" : "String",
+            "value" : "Guardar"
+          },
+          {
+            "name" : "listeners",
+            "type" : "Listeners",
+            "value" : "[]"
+          },
+          {
+            "name" : "actionParameters",
+            "type" : "ValuesArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "expression",
+            "type" : "JavaScript",
+            "value" : ""
+          },
+          {
+            "name" : "failureCallback",
+            "type" : "JavaScript",
+            "value" : ""
+          },
+          {
+            "name" : "successCallback",
+            "type" : "JavaScript",
+            "value" : ""
+          },
+          {
+            "name" : "dataSource",
+            "type" : "Datasource",
+            "value" : ""
+          },
+          {
+            "name" : "priority",
+            "type" : "Integer",
+            "value" : 5
+          },
+          {
+            "name" : "refreshPeriod",
+            "type" : "Integer",
+            "value" : ""
+          },
+          {
+            "name" : "buttonStyle",
+            "type" : "TableStyle",
+            "value" : ""
+          },
+          {
+            "name" : "htmlObject",
+            "type" : "HtmlObject",
+            "value" : "${h:panelbutton}"
+          },
+          {
+            "name" : "executeAtStart",
+            "type" : "Boolean",
+            "value" : "true"
+          },
+          {
+            "name" : "preExecution",
+            "type" : "JavaScript",
+            "value" : ""
+          },
+          {
+            "name" : "postExecution",
+            "type" : "JavaScript",
+            "value" : "function f() {\r\n//add the click function to be listened to\r\n$(\u0027#\u0027 + this.htmlObject + \u0027 button:first-child\u0027).click(function f2(e){\r\nwindow.setTimeout( SaveTheSession,100);\r\n});\r\n} "
+          },
+          {
+            "name" : "tooltip",
+            "type" : "Html",
+            "value" : ""
+          }
+        ],
+        "rowName" : "Button Component",
+        "type" : "ComponentsbuttonComponent",
+        "typeDesc" : "Button Component"
+      },
+      {
+        "id" : "67844c4f-35c1-cfb5-923b-f8b9f70b0f1c",
+        "parent" : "STANDARDCOMPONENTS",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "box1"
+          },
+          {
+            "name" : "parameter",
+            "type" : "Parameter",
+            "value" : ""
+          },
+          {
+            "name" : "listeners",
+            "type" : "Listeners",
+            "value" : "[]"
+          },
+          {
+            "name" : "numColumns",
+            "type" : "Integer",
+            "value" : ""
+          },
+          {
+            "name" : "numRows",
+            "type" : "Integer",
+            "value" : ""
+          },
+          {
+            "name" : "priority",
+            "type" : "Integer",
+            "value" : 5
+          },
+          {
+            "name" : "refreshPeriod",
+            "type" : "Integer",
+            "value" : ""
+          },
+          {
+            "name" : "htmlObject",
+            "type" : "HtmlObject",
+            "value" : "${h:panel1}"
+          },
+          {
+            "name" : "executeAtStart",
+            "type" : "Boolean",
+            "value" : "true"
+          },
+          {
+            "name" : "preExecution",
+            "type" : "JavaScript",
+            "value" : ""
+          },
+          {
+            "name" : "postExecution",
+            "type" : "JavaScript",
+            "value" : ""
+          },
+          {
+            "name" : "preChange",
+            "type" : "JavaScript",
+            "value" : ""
+          },
+          {
+            "name" : "postChange",
+            "type" : "JavaScript",
+            "value" : ""
+          },
+          {
+            "name" : "tooltip",
+            "type" : "Html",
+            "value" : ""
+          }
+        ],
+        "rowName" : "Textarea Input Component",
+        "type" : "ComponentstextareaInput",
+        "typeDesc" : "Textarea input Component"
+      },
+      {
+        "id" : "c7c63a69-b82c-f4a1-52a1-698b817b7436",
+        "parent" : "STANDARDCOMPONENTS",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "box2"
+          },
+          {
+            "name" : "parameter",
+            "type" : "Parameter",
+            "value" : ""
+          },
+          {
+            "name" : "listeners",
+            "type" : "Listeners",
+            "value" : "[]"
+          },
+          {
+            "name" : "numColumns",
+            "type" : "Integer",
+            "value" : ""
+          },
+          {
+            "name" : "numRows",
+            "type" : "Integer",
+            "value" : ""
+          },
+          {
+            "name" : "priority",
+            "type" : "Integer",
+            "value" : 5
+          },
+          {
+            "name" : "refreshPeriod",
+            "type" : "Integer",
+            "value" : ""
+          },
+          {
+            "name" : "htmlObject",
+            "type" : "HtmlObject",
+            "value" : "${h:panel2}"
+          },
+          {
+            "name" : "executeAtStart",
+            "type" : "Boolean",
+            "value" : "true"
+          },
+          {
+            "name" : "preExecution",
+            "type" : "JavaScript",
+            "value" : ""
+          },
+          {
+            "name" : "postExecution",
+            "type" : "JavaScript",
+            "value" : ""
+          },
+          {
+            "name" : "preChange",
+            "type" : "JavaScript",
+            "value" : ""
+          },
+          {
+            "name" : "postChange",
+            "type" : "JavaScript",
+            "value" : ""
+          },
+          {
+            "name" : "tooltip",
+            "type" : "Html",
+            "value" : ""
+          }
+        ],
+        "rowName" : "Textarea Input Component",
+        "type" : "ComponentstextareaInput",
+        "typeDesc" : "Textarea input Component"
+      },
+      {
+        "id" : "abbb80b2-72f7-1865-1714-c71ae90a41a2",
+        "parent" : "STANDARDCOMPONENTS",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "box3"
+          },
+          {
+            "name" : "parameter",
+            "type" : "Parameter",
+            "value" : ""
+          },
+          {
+            "name" : "listeners",
+            "type" : "Listeners",
+            "value" : "[]"
+          },
+          {
+            "name" : "numColumns",
+            "type" : "Integer",
+            "value" : ""
+          },
+          {
+            "name" : "numRows",
+            "type" : "Integer",
+            "value" : ""
+          },
+          {
+            "name" : "priority",
+            "type" : "Integer",
+            "value" : 5
+          },
+          {
+            "name" : "refreshPeriod",
+            "type" : "Integer",
+            "value" : ""
+          },
+          {
+            "name" : "htmlObject",
+            "type" : "HtmlObject",
+            "value" : "${h:panel3}"
+          },
+          {
+            "name" : "executeAtStart",
+            "type" : "Boolean",
+            "value" : "true"
+          },
+          {
+            "name" : "preExecution",
+            "type" : "JavaScript",
+            "value" : ""
+          },
+          {
+            "name" : "postExecution",
+            "type" : "JavaScript",
+            "value" : ""
+          },
+          {
+            "name" : "preChange",
+            "type" : "JavaScript",
+            "value" : ""
+          },
+          {
+            "name" : "postChange",
+            "type" : "JavaScript",
+            "value" : ""
+          },
+          {
+            "name" : "tooltip",
+            "type" : "Html",
+            "value" : ""
+          }
+        ],
+        "rowName" : "Textarea Input Component",
+        "type" : "ComponentstextareaInput",
+        "typeDesc" : "Textarea input Component"
+      }
+    ]
+  },
+  "datasources" : {
+    "rows" : [ ]
+  },
+  "filename" : "/public/Tesis/CDE/pdi.cdfde",
+  "layout" : {
+    "rows" : [
+      {
+        "id" : "51bbeae2-fe61-ebf0-dc6a-9d5b12816fb6",
+        "parent" : "UnIqEiD",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "code"
+          },
+          {
+            "name" : "resourceCode",
+            "type" : "Resource",
+            "value" : "function SaveTheSession() { // Set up some metadata\r\n\r\nvar svr = document.location.origin; //the name of the server\r\nvar api = \u0027/pentaho/kettle/executeTrans/\u0027;   //the apid call\r\nvar rep = \u0027singleDiServerInstance\u0027; //this is the default name.  May be set differently. Check {server}/pentaho/kettle/status for the name (at the bottom)\r\nvar trans = (\u0027/public/load_demo.ktr\u0027);\r\nuri_string = svr + api;\r\n//build a submit object\r\nvar jsonSubmit = {}; //an empty hash to hold the submission\r\n//get the values in the boxes\r\nvar varbox1= $(\u0022#render_box1\u0022).val(); //the name we gave the component has been appended to \u0027render_\u0027 and is now the \u0027id\u0027 of the element that we can use to get it\u0027s value\r\nvar varbox2= $(\u0022#render_box2\u0022).val();\r\nvar varbox3= $(\u0022#render_box3\u0022).val();\r\nvar P_SUBMIT = {}; //an empty hash to which we\u0027ll add attributes and put our values into them\r\nvar varbox1= $(\u0022#render_box1\u0022).val(); //the name we gave the component has been appended to \u0027render_\u0027 and is now the \u0027id\u0027 of the element that we can use to get it\u0027s value\r\nvar varbox2= $(\u0022#render_box2\u0022).val();\r\nvar varbox3= $(\u0022#render_box3\u0022).val();\r\nvar P_SUBMIT = {}; //an empty hash to which we\u0027ll add attributes and put our values into them\r\nP_SUBMIT.box1= varbox1;\r\nP_SUBMIT.box2= varbox2;\r\nP_SUBMIT.box3= varbox3;\r\n//submission time\r\nvar currentTime = new Date().toLocaleString();\r\nP_SUBMIT.submissionTime = currentTime.replace(/[\\/:, ]/gi, \u0022_\u0022);\r\n\r\n//stringify the data object (turn it into JSON) and assign it to the Submit object\r\njsonSubmit.P_SUBMIT = JSON.stringify(P_SUBMIT);\r\njsonSubmit.rep = rep;\r\njsonSubmit.trans = trans;\r\n\r\nconsole.log( JSON.stringify(jsonSubmit)); //log to the javascript console (see Dev Tools)\r\n//use a JQUERY\r\n$.ajax({\r\nurl: uri_string,\r\ntype: \u0022POST\u0022,\r\ndata: $.param(jsonSubmit),\r\nbeforeSend:function(){\r\nalert(\u0027Ejecutado\u0027)\r\n},\r\ncomplete:function(){toggleSpinner(\u0027busy\u0027,\u0027off\u0027);},\r\nsuccess: function f(data, textStatus, jqXHR) {\r\nalert(data);\r\n},\r\nerror: function f(jqXHR, textStatus, errorThrown) {\r\nalert(textStatus + \u0022: \u0022 + errorThrown);\r\n}});\r\n} "
+          },
+          {
+            "name" : "resourceType",
+            "type" : "Label",
+            "value" : "Javascript"
+          }
+        ],
+        "type" : "LayoutResourceCode",
+        "typeDesc" : "Resource"
+      },
+      {
+        "id" : "c3a6c052-2aa3-c0fb-5e60-fd354c04e19d",
+        "parent" : "UnIqEiD",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : ""
+          },
+          {
+            "name" : "height",
+            "type" : "Integer",
+            "value" : ""
+          },
+          {
+            "name" : "backgroundColor",
+            "type" : "Color",
+            "value" : ""
+          },
+          {
+            "name" : "roundCorners",
+            "type" : "RoundCorners",
+            "value" : ""
+          },
+          {
+            "name" : "textAlign",
+            "type" : "TextAlign",
+            "value" : ""
+          },
+          {
+            "name" : "cssClass",
+            "type" : "String",
+            "value" : ""
+          }
+        ],
+        "type" : "LayoutRow",
+        "typeDesc" : "Row"
+      },
+      {
+        "id" : "29aa8188-28cc-d420-896f-ad27d56f7db4",
+        "parent" : "c3a6c052-2aa3-c0fb-5e60-fd354c04e19d",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "panel1"
+          },
+          {
+            "name" : "bootstrapExtraSmall",
+            "type" : "String",
+            "value" : "12"
+          },
+          {
+            "name" : "bootstrapSmall",
+            "type" : "String",
+            "value" : ""
+          },
+          {
+            "name" : "bootstrapMedium",
+            "type" : "String",
+            "value" : ""
+          },
+          {
+            "name" : "bootstrapLarge",
+            "type" : "String",
+            "value" : ""
+          },
+          {
+            "name" : "bootstrapCssClass",
+            "type" : "String",
+            "value" : ""
+          },
+          {
+            "name" : "height",
+            "type" : "Integer",
+            "value" : "50"
+          },
+          {
+            "name" : "backgroundColor",
+            "type" : "Color",
+            "value" : ""
+          },
+          {
+            "name" : "roundCorners",
+            "type" : "RoundCorners",
+            "value" : ""
+          },
+          {
+            "name" : "textAlign",
+            "type" : "TextAlign",
+            "value" : ""
+          },
+          {
+            "name" : "cssClass",
+            "type" : "String",
+            "value" : ""
+          }
+        ],
+        "type" : "LayoutBootstrapColumn",
+        "typeDesc" : "Column"
+      },
+      {
+        "id" : "836b5be2-a3b1-56cb-d684-3e4607596266",
+        "parent" : "c3a6c052-2aa3-c0fb-5e60-fd354c04e19d",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "panel2"
+          },
+          {
+            "name" : "bootstrapExtraSmall",
+            "type" : "String",
+            "value" : "12"
+          },
+          {
+            "name" : "bootstrapSmall",
+            "type" : "String",
+            "value" : ""
+          },
+          {
+            "name" : "bootstrapMedium",
+            "type" : "String",
+            "value" : ""
+          },
+          {
+            "name" : "bootstrapLarge",
+            "type" : "String",
+            "value" : ""
+          },
+          {
+            "name" : "bootstrapCssClass",
+            "type" : "String",
+            "value" : ""
+          },
+          {
+            "name" : "height",
+            "type" : "Integer",
+            "value" : "50"
+          },
+          {
+            "name" : "backgroundColor",
+            "type" : "Color",
+            "value" : ""
+          },
+          {
+            "name" : "roundCorners",
+            "type" : "RoundCorners",
+            "value" : ""
+          },
+          {
+            "name" : "textAlign",
+            "type" : "TextAlign",
+            "value" : ""
+          },
+          {
+            "name" : "cssClass",
+            "type" : "String",
+            "value" : ""
+          }
+        ],
+        "type" : "LayoutBootstrapColumn",
+        "typeDesc" : "Column"
+      },
+      {
+        "id" : "822a2dbb-2d0e-ff0f-8b89-cb72f40e7c5f",
+        "parent" : "c3a6c052-2aa3-c0fb-5e60-fd354c04e19d",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "panel3"
+          },
+          {
+            "name" : "bootstrapExtraSmall",
+            "type" : "String",
+            "value" : "12"
+          },
+          {
+            "name" : "bootstrapSmall",
+            "type" : "String",
+            "value" : ""
+          },
+          {
+            "name" : "bootstrapMedium",
+            "type" : "String",
+            "value" : ""
+          },
+          {
+            "name" : "bootstrapLarge",
+            "type" : "String",
+            "value" : ""
+          },
+          {
+            "name" : "bootstrapCssClass",
+            "type" : "String",
+            "value" : ""
+          },
+          {
+            "name" : "height",
+            "type" : "Integer",
+            "value" : "50"
+          },
+          {
+            "name" : "backgroundColor",
+            "type" : "Color",
+            "value" : ""
+          },
+          {
+            "name" : "roundCorners",
+            "type" : "RoundCorners",
+            "value" : ""
+          },
+          {
+            "name" : "textAlign",
+            "type" : "TextAlign",
+            "value" : ""
+          },
+          {
+            "name" : "cssClass",
+            "type" : "String",
+            "value" : ""
+          }
+        ],
+        "type" : "LayoutBootstrapColumn",
+        "typeDesc" : "Column"
+      },
+      {
+        "id" : "3f4ce7e4-c1f9-28c5-aa81-b2b628a17090",
+        "parent" : "c3a6c052-2aa3-c0fb-5e60-fd354c04e19d",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "panelbutton"
+          },
+          {
+            "name" : "bootstrapExtraSmall",
+            "type" : "String",
+            "value" : "12"
+          },
+          {
+            "name" : "bootstrapSmall",
+            "type" : "String",
+            "value" : ""
+          },
+          {
+            "name" : "bootstrapMedium",
+            "type" : "String",
+            "value" : ""
+          },
+          {
+            "name" : "bootstrapLarge",
+            "type" : "String",
+            "value" : ""
+          },
+          {
+            "name" : "bootstrapCssClass",
+            "type" : "String",
+            "value" : ""
+          },
+          {
+            "name" : "height",
+            "type" : "Integer",
+            "value" : "50"
+          },
+          {
+            "name" : "backgroundColor",
+            "type" : "Color",
+            "value" : ""
+          },
+          {
+            "name" : "roundCorners",
+            "type" : "RoundCorners",
+            "value" : ""
+          },
+          {
+            "name" : "textAlign",
+            "type" : "TextAlign",
+            "value" : ""
+          },
+          {
+            "name" : "cssClass",
+            "type" : "String",
+            "value" : ""
+          }
+        ],
+        "type" : "LayoutBootstrapColumn",
+        "typeDesc" : "Column"
+      }
+    ],
+    "title" : "CDF - Sample structure"
+  }
+}

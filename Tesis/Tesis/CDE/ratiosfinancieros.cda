@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CDADescriptor>
+   <DataSources>
+      <Connection id="querry_1" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="querry_2" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="querry_3" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="querry_4" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="querry_5" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="querry_6" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="querry_7" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="querry_8" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+   </DataSources>
+   <DataAccess access="public" connection="querry_1" id="querry_1" type="sql">
+      <Name>querry_1</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="incide_liquidez" name="incide_liquidez" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select round(sum(activo_corriente::numeric)/sum(pasivo_corriente::numeric),2) as "RESULTADO", round(activo_corriente::integer,2) as "ACTIVO CIRCULANTE", pasivo_corriente::integer as "PASIVO CIRCULANTE" 
+from resultados2 GROUP BY activo_corriente,pasivo_corriente;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="querry_2" id="querry_2" type="sql">
+      <Name>querry_2</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="prueba_acida" name="prueba_acida" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select  round(sum(activo_corriente::numeric-inventario::numeric)/sum(pasivo_corriente::numeric),2) as "RESULTADO",activo_corriente::integer as "ACTIVO CORRIENTE",inventario as"INVENTARIO", pasivo_corriente::integer as "PASIVO CORRIENTE" 
+from resultados2 GROUP BY activo_corriente,pasivo_corriente,inventario ;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="querry_3" id="querry_3" type="sql">
+      <Name>querry_3</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="capital_trabajo" name="capital_trabajo" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select  round(sum(activo_corriente::integer-pasivo_corriente::integer),2) as "RESULTADO",activo_corriente::integer as "ACTIVO CORRIENTE", pasivo_corriente::integer as "PASIVO CORRIENTE" 
+from resultados2 GROUP BY activo_corriente,pasivo_corriente;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="querry_4" id="querry_4" type="sql">
+      <Name>querry_4</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="rotacion_cuentas" name="rotacion_cuentas" type="String"/>
+         <Parameter default="var" name="var" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select distinct round(sum(r.ventas::numeric)/sum(r2.activo_financiero::numeric/${var}::numeric),2) as "RESULTADO", r.ventas as "VENTAS", round(sum(r2.activo_financiero::numeric/${var}::numeric),2) as"PROMEDIO DE CUENTAS POR COBRAR"
+from resultados as r join resultados2 as r2 on r.compania_codigo=r2.compania_codigo
+group by r.ventas, r2.activo_financiero;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="querry_5" id="querry_5" type="sql">
+      <Name>querry_5</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="var" name="var" type="String"/>
+         <Parameter default="var2" name="var2" type="String"/>
+      </Parameters>
+      <Query><![CDATA[SELECT a from generate_series(1, 10) as a;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="querry_6" id="querry_6" type="sql">
+      <Name>querry_6</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="var" name="var" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select distinct round(sum(r.ventas::numeric)/sum(r2.activo_financiero::numeric/${var}::numeric),2) as "RESULTADO", r.ventas as "VENTAS", round(sum(r2.activo_financiero::numeric/${var}::numeric),2) as"CUENTAS POR COBRAR PROMEDIO"
+from resultados as r join resultados2 as r2 on r.compania_codigo=r2.compania_codigo
+group by r.ventas, r2.activo_financiero;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="querry_7" id="querry_7" type="sql">
+      <Name>querry_7</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="var2" name="var2" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select round(sum((r.costos::numeric)/(r2.inventario::numeric/${var2}::numeric)),3) as "RESULTADO",r.costos as "COSTO DE VENTAS", round(sum(r2.inventario::numeric/${var2}::numeric),3) as "PROMEDIO DE INVENTARIOS"
+from resultados as r join resultados2 as r2 on r.compania_codigo=r2.compania_codigo
+group by r.costos, r2.inventario;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="querry_8" id="querry_8" type="sql">
+      <Name>querry_8</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="var2" name="var2" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select round(365*(r2.inventario::numeric/${var2}::numeric)/(r.costos::numeric),3) as "RESULTADO", round(sum(r2.inventario::numeric/${var2}::numeric),3) as "INVENTARIO PROMEDIO",r.costos as "COSTO DE VENTAS"
+from resultados as r join resultados2 as r2 on r.compania_codigo=r2.compania_codigo
+group by r.costos, r2.inventario;]]></Query>
+   </DataAccess>
+</CDADescriptor>

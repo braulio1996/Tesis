@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CDADescriptor>
+   <DataSources>
+      <Connection id="proveedores" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/base</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="tablaSimple" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/base</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="general" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/base</Url>
+         <User>brau</User>
+      </Connection>
+   </DataSources>
+   <DataAccess access="public" connection="proveedores" id="proveedores" type="sql">
+      <Name>proveedores</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[select pro.nombre_comercial as "PROVEEDOR", com.total as "Total/Factura"
+from scafp_fac_proveedor as pro join scafp_fac_compra as com on pro.id=com.proveedor_id ;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="tablaSimple" id="tablaSimple" type="sql">
+      <Name>tablaSimple</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="p" name="p" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select pro.nombre_comercial as "PROVEEDOR", com.descripcion as "FACTURA", com.total as "Total/Factura"
+from scafp_fac_proveedor as pro join scafp_fac_compra as com on pro.id=com.proveedor_id 
+where pro.nombre_comercial=${p};]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="general" id="general" type="sql">
+      <Name>general</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[select id as "CÓDIGO", nombre_comercial as "PROVEEDOR", telefono1 as "TELEFONO", telefono2 as "CELULAR"
+from scafp_fac_proveedor;]]></Query>
+   </DataAccess>
+</CDADescriptor>
