@@ -67,6 +67,90 @@
          <Url>jdbc:postgresql://localhost:5432/bd</Url>
          <User>brau</User>
       </Connection>
+      <Connection id="querry_12" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="querry_13" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="querry_14" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="querry_15" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="querry_16" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="querry_17" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="querry_18" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="querry_19" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="querry_20" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="querry_21" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="querry_22" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="querry_23" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="querry_24" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
+      <Connection id="querry_25" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
    </DataSources>
    <DataAccess access="public" connection="querry_1" id="querry_1" type="sql">
       <Name>querry_1</Name>
@@ -188,5 +272,152 @@ group by r.compras,r2.oblig_comer;]]></Query>
       <Query><![CDATA[select round (r.ventas::numeric/r2.total_activo::numeric,4)as"RESULTADO",r.ventas as "VENTAS",r2.total_activo as "ACTIVOS TOTALES"
 from resultados as r join resultados2 as r2 on r.compania_codigo=r2.compania_codigo
 group by r.ventas ,r2.total_activo ;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="querry_12" id="querry_12" type="sql">
+      <Name>querry_12</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="razon_deuda" name="razon_deuda" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select  (round(r2.total_pasivo::numeric/r2.total_activo::numeric,1)*100) as"RESULTADO",r2.total_pasivo as"PASIVO TOTAL", r2.total_activo as"ACTIVO TOTAL"
+from resultados2 as r2
+group by r2.total_pasivo, r2.total_activo;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="querry_13" id="querry_13" type="sql">
+      <Name>querry_13</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="apalancamiento" name="apalancamiento" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select  (round(r2.total_pasivo::numeric/r2.total_patrimonio::numeric,1)*100) as"RESULTADO",r2.total_pasivo as"PASIVO TOTAL", r2.total_patrimonio as"PATRIMONIO"
+from resultados2 as r2 
+group by r2.total_pasivo,r2.total_patrimonio;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="querry_14" id="querry_14" type="sql">
+      <Name>querry_14</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="apla_cort_plazo" name="apla_cort_plazo" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select  (round(r2.pasivo_corriente::numeric/r2.total_patrimonio::numeric,1)*100) as"RESULTADO",r2.pasivo_corriente as"PASIVO CORRIENTE", r2.total_patrimonio as"PATRIMONIO"
+from resultados2 as r2 
+group by r2.pasivo_corriente,r2.total_patrimonio;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="querry_15" id="querry_15" type="sql">
+      <Name>querry_15</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="apla_larg_plazo" name="apla_larg_plazo" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select  (round(0::numeric/r2.total_patrimonio::numeric,1)*100)::numeric as"RESULTADO",'0'::numeric as"PASIVO NO CORRIENTE", r2.total_patrimonio as"PATRIMONIO"
+from resultados2 as r2 
+group by r2.pasivo_corriente,r2.total_patrimonio;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="querry_16" id="querry_16" type="sql">
+      <Name>querry_16</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="razon_cobertura1" name="razon_cobertura1" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select (round(r.utlidadesbventas::numeric/r.gasto_operacional::numeric,2))::numeric as"RESULTADO",r.utlidadesbventas as "UTILIDAD BRUTA", r.gasto_operacional as "GASTOS FINANCIEROS"
+from resultados r 
+group by r.utlidadesbventas, r.gasto_operacional;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="querry_17" id="querry_17" type="sql">
+      <Name>querry_17</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="razon_cobertura2" name="razon_cobertura2" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select (round(r.utlidades_antes_impuestos::numeric/r.gasto_operacional::numeric,2))::numeric as "RESULTADO",r.utlidades_antes_impuestos as"UTILIDAD ANTES DE INTERESES", r.gasto_operacional as"GASTOS FINANCIEROS"
+from resultados r 
+group by r.utlidades_antes_impuestos, r.gasto_operacional ;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="querry_18" id="querry_18" type="sql">
+      <Name>querry_18</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="razon_cobertura3" name="razon_cobertura3" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select (round(r.utilidad_bruta::numeric/r.gasto_operacional::numeric,2))::numeric as "RESULTADO",r.utilidad_bruta as"UTILIDAD NETA", r.gasto_operacional as"GASTOS FINANCIEROS"
+from resultados r 
+group by r.utilidad_bruta, r.gasto_operacional ;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="querry_19" id="querry_19" type="sql">
+      <Name>querry_19</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="margen_bruto" name="margen_bruto" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select round(r.utlidadesbventas::numeric/r.ventas::numeric,2) as "RESULTADO", r.utlidadesbventas as "UTILIDAD UTILIDAD", r.ventas as "VENTAS NETAS"
+from resultados r;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="querry_20" id="querry_20" type="sql">
+      <Name>querry_20</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="margen_operativa" name="margen_operativa" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select round(r.utlidades_antes_impuestos::numeric/r.ventas::numeric,2) as "RESULTADO", r.utlidades_antes_impuestos as "UTILIDAD OPERATIVA", r.ventas as "VENTAS NETAS"
+from resultados r;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="querry_21" id="querry_21" type="sql">
+      <Name>querry_21</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="margen_nt_utilidad" name="margen_nt_utilidad" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select round(r.utilidad_bruta::numeric/r.ventas::numeric,2) as "RESULTADO", r.utilidad_bruta as "UTILIDAD NETA", r.ventas as "VENTAS NETAS"
+from resultados r;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="querry_22" id="querry_22" type="sql">
+      <Name>querry_22</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="ROA" name="ROA" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select round(r.utilidad_bruta::numeric/r2.total_activo::numeric,2) as "RESULTADO", r.utilidad_bruta as "UTILIDAD NETA", r2.total_activo as "ACTIVOS"
+from resultados as r join resultados2 as r2 on r.compania_codigo=r2.compania_codigo;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="querry_23" id="querry_23" type="sql">
+      <Name>querry_23</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="ROE" name="ROE" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select round(r.utilidad_bruta::numeric/r2.total_patrimonio::numeric,2) as "RESULTADO", r.utilidad_bruta as "UTILIDAD NETA", r2.total_patrimonio as "PATRIMONIO"
+from resultados as r join resultados2 as r2 on r.compania_codigo=r2.compania_codigo;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="querry_24" id="querry_24" type="sql">
+      <Name>querry_24</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="ROA_2" name="ROA_2" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select round(r.utilidad_bruta::numeric/r2.total_activo::numeric,6) as "RESULTADO", r.utilidad_bruta as "UTILIDAD NETA", r2.total_activo as "ACTIVOS"
+from resultados as r join resultados2 as r2 on r.compania_codigo=r2.compania_codigo;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="querry_25" id="querry_25" type="sql">
+      <Name>querry_25</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="ROE_2" name="ROE_2" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select round(r.utilidad_bruta::numeric/r2.total_patrimonio::numeric,6) as "RESULTADO", r.utilidad_bruta as "UTILIDAD NETA", r2.total_patrimonio as "PATRIMONIO"
+from resultados as r join resultados2 as r2 on r.compania_codigo=r2.compania_codigo;]]></Query>
    </DataAccess>
 </CDADescriptor>
