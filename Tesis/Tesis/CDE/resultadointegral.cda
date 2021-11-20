@@ -91,6 +91,12 @@
          <Url>jdbc:postgresql://localhost:5432/bd</Url>
          <User>brau</User>
       </Connection>
+      <Connection id="querry" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
       <Connection id="k1" type="kettle.TransFromFile">
          <KtrFile>../../load_demo.ktr</KtrFile>
          <variables datarow-name="name" variable-name="name"/>
@@ -108,6 +114,14 @@
          <variables datarow-name="name4" variable-name="name4"/>
          <variables datarow-name="name5" variable-name="name5"/>
          <variables datarow-name="name6" variable-name="name6"/>
+      </Connection>
+      <Connection id="k2" type="kettle.TransFromFile">
+         <KtrFile>../../load_demo2.ktr</KtrFile>
+         <variables datarow-name="name7" variable-name="name7"/>
+      </Connection>
+      <Connection id="k3" type="kettle.TransFromFile">
+         <KtrFile>../../load_demo3.ktr</KtrFile>
+         <variables datarow-name="name8" variable-name="name8"/>
       </Connection>
    </DataSources>
    <DataAccess access="public" connection="fecha1" id="fecha1" type="sql">
@@ -291,6 +305,18 @@ where fecha between ${fecha1} and ${fecha2};]]></Query>
       <Query><![CDATA[select utlidades_antes_impuestos as "UTILIDAD ANTES DE IMPUESTOS"
 from resultados;]]></Query>
    </DataAccess>
+   <DataAccess access="public" connection="querry" id="querry" type="sql">
+      <Name>querry</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[select utlidades_antes_impuestos as"U. ANT DE IMPTS","15%participacion",
+utlidades_antes_imp_renta as "U. ANT DEL IMPTS A LA RENTA","25%impuesto",
+utlidades_antes_re_legal as "U. ANT DE LA R. LEGAL","10%reserva",
+utilidades_antes_re_estatut as "U. ANT DE LA R. ESTATUTARIA","5%reserva",
+utilidad_bruta as "U. NETA DEL EJERCICIO"
+from resultados;]]></Query>
+   </DataAccess>
    <DataAccess access="public" connection="k1" id="k1" type="kettle">
       <Name>k1</Name>
       <Cache duration="3600" enabled="false"/>
@@ -313,5 +339,23 @@ from resultados;]]></Query>
          <Parameter default="$(name6)" name="name6" type="String"/>
       </Parameters>
       <Query><![CDATA[p1]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="k2" id="k2" type="kettle">
+      <Name>k2</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="$(name7)" name="name7" type="String"/>
+      </Parameters>
+      <Query><![CDATA[p2]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="k3" id="k3" type="kettle">
+      <Name>k3</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="$(name8)" name="name8" type="String"/>
+      </Parameters>
+      <Query><![CDATA[p3]]></Query>
    </DataAccess>
 </CDADescriptor>
