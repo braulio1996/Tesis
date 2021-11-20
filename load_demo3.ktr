@@ -10,104 +10,9 @@
     <directory>/</directory>
     <parameters>
       <parameter>
-        <name>var1</name>
-        <default_value/>
-        <description>abv</description>
-      </parameter>
-      <parameter>
-        <name>var10</name>
-        <default_value/>
-        <description>abc</description>
-      </parameter>
-      <parameter>
-        <name>var11</name>
-        <default_value/>
-        <description>abc</description>
-      </parameter>
-      <parameter>
-        <name>var12</name>
-        <default_value/>
-        <description>abc</description>
-      </parameter>
-      <parameter>
-        <name>var13</name>
-        <default_value/>
-        <description>abc</description>
-      </parameter>
-      <parameter>
-        <name>var14</name>
-        <default_value/>
-        <description>abc</description>
-      </parameter>
-      <parameter>
-        <name>var15</name>
-        <default_value/>
-        <description>abc</description>
-      </parameter>
-      <parameter>
-        <name>var16</name>
-        <default_value/>
-        <description>abc</description>
-      </parameter>
-      <parameter>
-        <name>var17</name>
-        <default_value/>
-        <description>abc</description>
-      </parameter>
-      <parameter>
-        <name>var18</name>
-        <default_value/>
-        <description>abc</description>
-      </parameter>
-      <parameter>
-        <name>var19</name>
-        <default_value/>
-        <description>abc</description>
-      </parameter>
-      <parameter>
-        <name>var2</name>
-        <default_value/>
-        <description>abc</description>
-      </parameter>
-      <parameter>
-        <name>var20</name>
-        <default_value/>
-        <description>abc</description>
-      </parameter>
-      <parameter>
-        <name>var3</name>
-        <default_value/>
-        <description>abc</description>
-      </parameter>
-      <parameter>
-        <name>var4</name>
-        <default_value/>
-        <description>abc</description>
-      </parameter>
-      <parameter>
-        <name>var5</name>
-        <default_value/>
-        <description>abc</description>
-      </parameter>
-      <parameter>
-        <name>var6</name>
-        <default_value/>
-        <description>abc</description>
-      </parameter>
-      <parameter>
-        <name>var7</name>
-        <default_value/>
-        <description>abc</description>
-      </parameter>
-      <parameter>
-        <name>var8</name>
-        <default_value/>
-        <description>abc</description>
-      </parameter>
-      <parameter>
-        <name>var9</name>
-        <default_value/>
-        <description>abc</description>
+        <name>name8</name>
+        <default_value>1</default_value>
+        <description>etc</description>
       </parameter>
     </parameters>
     <log>
@@ -589,26 +494,334 @@
   </connection>
   <order>
     <hop>
-      <from>p1</from>
-      <to>JSON output</to>
+      <from>Calculadora 2 2</from>
+      <to>Salida Tabla 2</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>JSON output</from>
-      <to>Calculadora</to>
+      <from>Gastos Entrada</from>
+      <to>Calculadora 2 2</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Calculadora</from>
-      <to>Salida Tabla</to>
+      <from>p3</from>
+      <to>JSON output 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>JSON output 2</from>
+      <to>Gastos Entrada</to>
       <enabled>Y</enabled>
     </hop>
   </order>
   <step>
-    <name>JSON output</name>
-    <type>JsonOutput</type>
+    <name>Calculadora 2 2</name>
+    <type>Calculator</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <failIfNoFile>Y</failIfNoFile>
+    <calculation>
+      <field_name>d1</field_name>
+      <calc_type>CONSTANT</calc_type>
+      <field_a>Inventario Inicial</field_a>
+      <field_b/>
+      <field_c/>
+      <value_type>String</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask/>
+      <decimal_symbol/>
+      <grouping_symbol/>
+      <currency_symbol/>
+    </calculation>
+    <calculation>
+      <field_name>d2</field_name>
+      <calc_type>CONSTANT</calc_type>
+      <field_a>Inventario Final</field_a>
+      <field_b/>
+      <field_c/>
+      <value_type>String</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask/>
+      <decimal_symbol/>
+      <grouping_symbol/>
+      <currency_symbol/>
+    </calculation>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>736</xloc>
+      <yloc>320</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Gastos Entrada</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>bd</connection>
+    <sql>select b.compania_codigo, to_char(a.fecha,'YYYY-MM-DD') as fecha ,a.detalle as detalle 
+,ABS(COALESCE(sum(a.en_valor_total)+sum(a.s_valor_total),0)) as total
+,(select ex_valor_total as inicio from scafp_inv_ges_bodega_detallekardex ORDER BY id asc LIMIT 1),(select to_char(fecha,'YYYY-MM-DD') as fecha_2 from scafp_inv_ges_bodega_detallekardex ORDER BY id asc LIMIT 1) 
+,(select ex_valor_total as fin from scafp_inv_ges_bodega_detallekardex ORDER BY id desc LIMIT 1) ,(select to_char(fecha,'YYYY-MM-DD') as fechas_3 from scafp_inv_ges_bodega_detallekardex ORDER BY id desc LIMIT 1)  
+from scafp_inv_ges_bodega_detallekardex as a join scafp_inv_ges_bodega_kardex  as b on a.kardes_id =b.id 
+where detalle ='compras' or detalle ='devolución en compra'group by  a.fecha,a.detalle,b.compania_codigo</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cached_row_meta_active>N</cached_row_meta_active>
+    <row-meta>
+      <value-meta>
+        <type>Number</type>
+        <storagetype>normal</storagetype>
+        <name>p3</name>
+        <length>0</length>
+        <precision>-1</precision>
+        <origin>p3</origin>
+        <comments/>
+        <conversion_Mask/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>es_ES</date_format_locale>
+        <date_format_timezone>America/Bogota</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>Integer</type>
+        <storagetype>normal</storagetype>
+        <name>compania_codigo</name>
+        <length>9</length>
+        <precision>0</precision>
+        <origin>Gastos Entrada</origin>
+        <comments>compania_codigo</comments>
+        <conversion_Mask>####0;-####0</conversion_Mask>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>es_ES</date_format_locale>
+        <date_format_timezone>America/Bogota</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>fecha</name>
+        <length>2147483647</length>
+        <precision>-1</precision>
+        <origin>Gastos Entrada</origin>
+        <comments>fecha</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>es_ES</date_format_locale>
+        <date_format_timezone>America/Bogota</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>detalle</name>
+        <length>2147483647</length>
+        <precision>-1</precision>
+        <origin>Gastos Entrada</origin>
+        <comments>detalle</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>es_ES</date_format_locale>
+        <date_format_timezone>America/Bogota</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>BigNumber</type>
+        <storagetype>normal</storagetype>
+        <name>total</name>
+        <length>-1</length>
+        <precision>-1</precision>
+        <origin>Gastos Entrada</origin>
+        <comments>total</comments>
+        <conversion_Mask>######0.0###################;-######0.0###################</conversion_Mask>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>es_ES</date_format_locale>
+        <date_format_timezone>America/Bogota</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>BigNumber</type>
+        <storagetype>normal</storagetype>
+        <name>inicio</name>
+        <length>-1</length>
+        <precision>-1</precision>
+        <origin>Gastos Entrada</origin>
+        <comments>inicio</comments>
+        <conversion_Mask>######0.0###################;-######0.0###################</conversion_Mask>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>es_ES</date_format_locale>
+        <date_format_timezone>America/Bogota</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>fecha_2</name>
+        <length>2147483647</length>
+        <precision>-1</precision>
+        <origin>Gastos Entrada</origin>
+        <comments>fecha_2</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>es_ES</date_format_locale>
+        <date_format_timezone>America/Bogota</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>BigNumber</type>
+        <storagetype>normal</storagetype>
+        <name>fin</name>
+        <length>-1</length>
+        <precision>-1</precision>
+        <origin>Gastos Entrada</origin>
+        <comments>fin</comments>
+        <conversion_Mask>######0.0###################;-######0.0###################</conversion_Mask>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>es_ES</date_format_locale>
+        <date_format_timezone>America/Bogota</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>fechas_3</name>
+        <length>2147483647</length>
+        <precision>-1</precision>
+        <origin>Gastos Entrada</origin>
+        <comments>fechas_3</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>es_ES</date_format_locale>
+        <date_format_timezone>America/Bogota</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+    </row-meta>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>432</xloc>
+      <yloc>320</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>JSON output 2</name>
+    <type>JsonOutput</type>
+    <description/>
+    <distribute>N</distribute>
     <custom_distribution/>
     <copies>1</copies>
     <partitioning>
@@ -623,7 +836,7 @@
     <encoding>UTF-8</encoding>
     <addtoresult>N</addtoresult>
     <file>
-      <name>C:\pentaho\test</name>
+      <name>C:\pentaho\test3</name>
       <extention>js</extention>
       <append>N</append>
       <split>N</split>
@@ -636,84 +849,8 @@
     </file>
     <fields>
       <field>
-        <name>activo_corriente</name>
-        <element>activo_corriente</element>
-      </field>
-      <field>
-        <name>efectivo_equivalente_efectivo</name>
-        <element>efectivo_equivalente_efectivo</element>
-      </field>
-      <field>
-        <name>activo_financiero</name>
-        <element>activo_financiero</element>
-      </field>
-      <field>
-        <name>inventario</name>
-        <element>inventario</element>
-      </field>
-      <field>
-        <name>servicios_pagos_anti</name>
-        <element>servicios_pagos_anti</element>
-      </field>
-      <field>
-        <name>activo_no_corriente</name>
-        <element>activo_no_corriente</element>
-      </field>
-      <field>
-        <name>ppe</name>
-        <element>ppe</element>
-      </field>
-      <field>
-        <name>total_activo</name>
-        <element>total_activo</element>
-      </field>
-      <field>
-        <name>pasivo_corriente</name>
-        <element>pasivo_corriente</element>
-      </field>
-      <field>
-        <name>oblig_comer</name>
-        <element>oblig_comer</element>
-      </field>
-      <field>
-        <name>oblig_lab</name>
-        <element>oblig_lab</element>
-      </field>
-      <field>
-        <name>oblig_iess</name>
-        <element>oblig_iess</element>
-      </field>
-      <field>
-        <name>oblig_fiscales</name>
-        <element>oblig_fiscales</element>
-      </field>
-      <field>
-        <name>total_pasivo</name>
-        <element>total_pasivo</element>
-      </field>
-      <field>
-        <name>patrimonio</name>
-        <element>patrimonio</element>
-      </field>
-      <field>
-        <name>capital</name>
-        <element>capital</element>
-      </field>
-      <field>
-        <name>reserva</name>
-        <element>reserva</element>
-      </field>
-      <field>
-        <name>resultados</name>
-        <element>resultados</element>
-      </field>
-      <field>
-        <name>total_patrimonio</name>
-        <element>total_patrimonio</element>
-      </field>
-      <field>
-        <name>total_patri_pasivo</name>
-        <element>total_patri_pasivo</element>
+        <name>p3</name>
+        <element>p3</element>
       </field>
     </fields>
     <attributes/>
@@ -725,13 +862,13 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>288</xloc>
-      <yloc>224</yloc>
+      <xloc>278</xloc>
+      <yloc>370</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Salida Tabla</name>
+    <name>Salida Tabla 2</name>
     <type>TableOutput</type>
     <description/>
     <distribute>Y</distribute>
@@ -743,7 +880,7 @@
     </partitioning>
     <connection>bd</connection>
     <schema>public</schema>
-    <table>resultados2</table>
+    <table>egresos</table>
     <commit>1000</commit>
     <truncate>Y</truncate>
     <ignore_errors>N</ignore_errors>
@@ -769,13 +906,13 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>640</xloc>
-      <yloc>224</yloc>
+      <xloc>960</xloc>
+      <yloc>320</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>p1</name>
+    <name>p3</name>
     <type>GetVariable</type>
     <description/>
     <distribute>Y</distribute>
@@ -787,237 +924,9 @@
     </partitioning>
     <fields>
       <field>
-        <name>activo_corriente</name>
-        <variable>${var1}</variable>
-        <type>Number</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>efectivo_equivalente_efectivo</name>
-        <variable>${var2}</variable>
-        <type>Number</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>activo_financiero</name>
-        <variable>${var3}</variable>
-        <type>Number</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>inventario</name>
-        <variable>${var4}</variable>
-        <type>Number</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>servicios_pagos_anti</name>
-        <variable>${var5}</variable>
-        <type>Number</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>activo_no_corriente</name>
-        <variable>${var6}</variable>
-        <type>Number</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>ppe</name>
-        <variable>${var7}</variable>
-        <type>Number</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>total_activo</name>
-        <variable>${var8}</variable>
-        <type>Number</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>pasivo_corriente</name>
-        <variable>${var9}</variable>
-        <type>Number</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>oblig_comer</name>
-        <variable>${var10}</variable>
-        <type>Number</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>oblig_lab</name>
-        <variable>${var11}</variable>
-        <type>Number</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>oblig_iess</name>
-        <variable>${var12}</variable>
-        <type>Number</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>oblig_fiscales</name>
-        <variable>${var13}</variable>
-        <type>Number</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>total_pasivo</name>
-        <variable>${var14}</variable>
-        <type>Number</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>patrimonio</name>
-        <variable>${var15}</variable>
-        <type>Number</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>capital</name>
-        <variable>${var16}</variable>
-        <type>Number</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>reserva</name>
-        <variable>${var17}</variable>
-        <type>Number</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>resultados</name>
-        <variable>${var18}</variable>
-        <type>Number</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>total_patrimonio</name>
-        <variable>${var19}</variable>
-        <type>Number</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>total_patri_pasivo</name>
-        <variable>${var20}</variable>
-        <type>Number</type>
+        <name>p3</name>
+        <variable>${name8}</variable>
+        <type>Integer</type>
         <format/>
         <currency/>
         <decimal/>
@@ -1036,49 +945,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>176</xloc>
-      <yloc>224</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Calculadora</name>
-    <type>Calculator</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <failIfNoFile>Y</failIfNoFile>
-    <calculation>
-      <field_name>compania_codigo</field_name>
-      <calc_type>CONSTANT</calc_type>
-      <field_a>1</field_a>
-      <field_b/>
-      <field_c/>
-      <value_type>Number</value_type>
-      <value_length>-1</value_length>
-      <value_precision>-1</value_precision>
-      <remove>N</remove>
-      <conversion_mask/>
-      <decimal_symbol/>
-      <grouping_symbol/>
-      <currency_symbol/>
-    </calculation>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>480</xloc>
-      <yloc>224</yloc>
+      <xloc>192</xloc>
+      <yloc>320</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
