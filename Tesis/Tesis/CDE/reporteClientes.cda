@@ -4,7 +4,7 @@
       <Connection id="Querry" type="sql.jdbc">
          <Driver>org.postgresql.driver</Driver>
          <Pass>brau</Pass>
-         <Url>jdbc:postgresql://localhost:5432/base</Url>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
          <User>brau</User>
       </Connection>
    </DataSources>
@@ -13,7 +13,7 @@
       <Cache duration="3600" enabled="false"/>
       <Columns/>
       <Parameters/>
-      <Query><![CDATA[select id as "CODIGO", nombre as "NOMBRES",identificacion as "CI/ RUC", direccion as "DIRECCION",telefono1 as "TELEFONO",telefono2 as "CELULAR"
-from scafp_fac_cliente;]]></Query>
+      <Query><![CDATA[select id as "CODIGO", "name" as "NOMBRES",identificacion as "CI/ RUC", street as "DIRECCION",phone as "TELEFONO",mobile as "CELULAR"
+from res_partner rp where tipo='cliente';]]></Query>
    </DataAccess>
 </CDADescriptor>

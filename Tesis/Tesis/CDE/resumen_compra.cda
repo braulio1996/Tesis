@@ -4,31 +4,31 @@
       <Connection id="fecha1" type="sql.jdbc">
          <Driver>org.postgresql.driver</Driver>
          <Pass>brau</Pass>
-         <Url>jdbc:postgresql://localhost:5432/base</Url>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
          <User>brau</User>
       </Connection>
       <Connection id="fecha2" type="sql.jdbc">
          <Driver>org.postgresql.driver</Driver>
          <Pass>brau</Pass>
-         <Url>jdbc:postgresql://localhost:5432/base</Url>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
          <User>brau</User>
       </Connection>
       <Connection id="fact1" type="sql.jdbc">
          <Driver>org.postgresql.driver</Driver>
          <Pass>brau</Pass>
-         <Url>jdbc:postgresql://localhost:5432/base</Url>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
          <User>brau</User>
       </Connection>
       <Connection id="fac2" type="sql.jdbc">
          <Driver>org.postgresql.driver</Driver>
          <Pass>brau</Pass>
-         <Url>jdbc:postgresql://localhost:5432/base</Url>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
          <User>brau</User>
       </Connection>
       <Connection id="TablaSimple" type="sql.jdbc">
          <Driver>org.postgresql.driver</Driver>
          <Pass>brau</Pass>
-         <Url>jdbc:postgresql://localhost:5432/base</Url>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
          <User>brau</User>
       </Connection>
    </DataSources>
@@ -60,11 +60,11 @@ order by fecha desc;]]></Query>
          <Parameter default="fecha1" name="fecha1" type="String"/>
          <Parameter default="fecha2" name="fecha2" type="String"/>
       </Parameters>
-      <Query><![CDATA[select pro.nombre_comercial as "PROVEEDOR", com.total as "TOTAL FACTURA",
+      <Query><![CDATA[select pro.display_name as "PROVEEDOR", com.total as "TOTAL FACTURA",
 round(SUM(com.total-com.iva*0.3-com.sub_total_iva*0.01),2) as "TOTAL A PAGAR"
-from scafp_fac_compra as com join scafp_fac_proveedor as pro on com.proveedor_id=pro.id
-WHERE com.fecha BETWEEN to_date(${fecha1}, 'yyyy-mm-dd') AND to_date(${fecha2}, 'yyyy-mm-dd')
-group by com.fecha,com.codigo,com.total,com.total,pro.nombre_comercial,com.sub_total_iva,com.sub_total,com.iva,com.id
+from scafp_fac_compra as com join res_partner  as pro on com.proveedor_id=pro.id
+where tipo='proveedor' and com.fecha BETWEEN to_date(${fecha1}, 'yyyy-mm-dd') AND to_date(${fecha2}, 'yyyy-mm-dd')
+group by com.fecha,com.codigo,com.total,com.total,pro.display_name ,com.sub_total_iva,com.sub_total,com.iva,com.id
 order by com.id;]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="fac2" id="fac2" type="sql">
@@ -75,7 +75,7 @@ order by com.id;]]></Query>
          <Parameter default="fecha1" name="fecha1" type="String"/>
          <Parameter default="fecha2" name="fecha2" type="String"/>
       </Parameters>
-      <Query><![CDATA[select com.fecha as "EMISIÓN",com.fecha_hasta as "VENCE",pro.nombre_comercial as "PROVEEDOR",com.ref_compra as "NÚMERO",
+      <Query><![CDATA[select com.fecha as "EMISIÓN",com.fecha_hasta as "VENCE",pro.display_name  as "PROVEEDOR",com.ref_compra as "NÚMERO",
 CASE
 WHEN sub_total>0 or sub_total_iva<0
 THEN sub_total
@@ -84,9 +84,9 @@ END as "V. COMPRA", com.sub_total_iva as "SUB-IVA",com.sub_total as "SUB-S/IVA",
 com.iva as "IVA",ROUND(SUM(com.sub_total_iva*0.01),2) as "RET-FTE",
 ROUND(SUM(com.iva*0.3),2) as "RET-IVA", com.total as "TOTAL FACTURA",
 round(SUM(com.total-com.iva*0.3-com.sub_total_iva*0.01),2) as "TOTAL A PAGAR"
-from scafp_fac_compra as com join scafp_fac_proveedor as pro on com.proveedor_id=pro.id
+from scafp_fac_compra as com join res_partner as pro on com.proveedor_id=pro.id
 WHERE com.fecha BETWEEN to_date(${fecha1}, 'yyyy-mm-dd') AND to_date(${fecha2}, 'yyyy-mm-dd')
-group by com.fecha,com.codigo,com.total,com.total,pro.nombre_comercial,com.sub_total_iva,com.sub_total,com.iva,com.id
+group by com.fecha,com.codigo,com.total,com.total,pro.display_name ,com.sub_total_iva,com.sub_total,com.iva,com.id
 order by com.id;]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="TablaSimple" id="TablaSimple" type="sql">
@@ -96,11 +96,11 @@ order by com.id;]]></Query>
       <Parameters>
          <Parameter default="p" name="p" type="String"/>
       </Parameters>
-      <Query><![CDATA[select pro.nombre_comercial as "PROVEEDOR", com.total as "TOTAL FACTURA",
+      <Query><![CDATA[select pro.display_name as "PROVEEDOR", com.total as "TOTAL FACTURA",
 round(SUM(com.total-com.iva*0.3-com.sub_total_iva*0.01),2) as "TOTAL A PAGAR"
-from scafp_fac_compra as com join scafp_fac_proveedor as pro on com.proveedor_id=pro.id
-where pro.nombre_comercial=${p}
-group by com.fecha,com.codigo,com.total,com.total,pro.nombre_comercial,com.sub_total_iva,com.sub_total,com.iva,com.id
+from scafp_fac_compra as com join res_partner as pro on com.proveedor_id=pro.id
+where pro.display_name=${p}
+group by com.fecha,com.codigo,com.total,com.total,pro.display_name,com.sub_total_iva,com.sub_total,com.iva,com.id
 order by com.id;]]></Query>
    </DataAccess>
 </CDADescriptor>

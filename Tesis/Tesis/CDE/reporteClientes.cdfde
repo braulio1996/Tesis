@@ -522,12 +522,12 @@
           {
             "name" : "url",
             "type" : "String",
-            "value" : "jdbc:postgresql://localhost:5432/base"
+            "value" : "jdbc:postgresql://localhost:5432/bd"
           },
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "select id as \u0022CODIGO\u0022, nombre as \u0022NOMBRES\u0022,identificacion as \u0022CI/ RUC\u0022, direccion as \u0022DIRECCION\u0022,telefono1 as \u0022TELEFONO\u0022,telefono2 as \u0022CELULAR\u0022\r\nfrom scafp_fac_cliente;"
+            "value" : "select id as \u0022CODIGO\u0022, \u0022name\u0022 as \u0022NOMBRES\u0022,identificacion as \u0022CI/ RUC\u0022, street as \u0022DIRECCION\u0022,phone as \u0022TELEFONO\u0022,mobile as \u0022CELULAR\u0022\r\nfrom res_partner rp where tipo=\u0027cliente\u0027;"
           },
           {
             "name" : "parameters",

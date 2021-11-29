@@ -2091,27 +2091,27 @@
           {
             "name" : "filter",
             "type" : "Boolean",
-            "value" : "true"
+            "value" : "false"
           },
           {
             "name" : "info",
             "type" : "Boolean",
-            "value" : "true"
+            "value" : "false"
           },
           {
             "name" : "lengthChange",
             "type" : "Boolean",
-            "value" : "true"
+            "value" : "false"
           },
           {
             "name" : "paginate",
             "type" : "Boolean",
-            "value" : "true"
+            "value" : "false"
           },
           {
             "name" : "sort",
             "type" : "Boolean",
-            "value" : "true"
+            "value" : "false"
           },
           {
             "name" : "colSearchable",
@@ -2594,7 +2594,7 @@
           {
             "name" : "url",
             "type" : "String",
-            "value" : "jdbc:postgresql://localhost:5432/base"
+            "value" : "jdbc:postgresql://localhost:5432/bd"
           },
           {
             "name" : "query",
@@ -2681,7 +2681,7 @@
           {
             "name" : "url",
             "type" : "String",
-            "value" : "jdbc:postgresql://localhost:5432/base"
+            "value" : "jdbc:postgresql://localhost:5432/bd"
           },
           {
             "name" : "query",
@@ -2768,12 +2768,12 @@
           {
             "name" : "url",
             "type" : "String",
-            "value" : "jdbc:postgresql://localhost:5432/base"
+            "value" : "jdbc:postgresql://localhost:5432/bd"
           },
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "select pro.nombre as \u0022Descripción\u0022,dp.valor_unitario as \u0022Precio unitario\u0022\r\nfrom scafp_inv_producto as pro join scafp_fac_detallecompra dp on dp.producto=pro.id\r\nJOIN scafp_fac_compra as com on com.id=dp.compra_id\r\nWHERE com.fecha BETWEEN to_date(${fecha1}, \u0027yyyy-mm-dd\u0027) AND to_date(${fecha2}, \u0027yyyy-mm-dd\u0027)\r\ngroup by pro.nombre,dp.cantidad,dp.valor_unitario,com.total,com.fecha;\r\n"
+            "value" : "select pro.\u0022name\u0022 as \u0022Descripción\u0022,dp.valor_unitario as \u0022Precio unitario\u0022\r\nfrom product_template as pro join scafp_fac_detallecompra dp on dp.producto=pro.id\r\nJOIN scafp_fac_compra as com on com.id=dp.compra_id\r\nWHERE com.fecha BETWEEN to_date(${fecha1}, \u0027yyyy-mm-dd\u0027) AND to_date(${fecha2}, \u0027yyyy-mm-dd\u0027)\r\ngroup by pro.\u0022name\u0022,dp.cantidad,dp.valor_unitario,com.total,com.fecha;"
           },
           {
             "name" : "parameters",
@@ -2855,12 +2855,12 @@
           {
             "name" : "url",
             "type" : "String",
-            "value" : "jdbc:postgresql://localhost:5432/base"
+            "value" : "jdbc:postgresql://localhost:5432/bd"
           },
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "select pro.nombre as \u0022Descripción\u0022,SUM(dp.cantidad) as \u0022Cantidad\u0022 ,dp.valor_unitario as \u0022Precio unitario\u0022,com.total as \u0022Total de costo\u0022\r\nfrom scafp_inv_producto as pro join scafp_fac_detallecompra dp on dp.producto=pro.id\r\nJOIN scafp_fac_compra as com on com.id=dp.compra_id\r\nWHERE pro.nombre=${a}\r\ngroup by pro.nombre,dp.cantidad,dp.valor_unitario,com.total,com.fecha;"
+            "value" : "select pro.\u0022name\u0022 as \u0022Descripción\u0022,SUM(dp.cantidad) as \u0022Cantidad\u0022 ,dp.valor_unitario as \u0022Precio unitario\u0022,com.total as \u0022Total de costo\u0022\r\nfrom product_template as pro join scafp_fac_detallecompra dp on dp.producto=pro.id\r\nJOIN scafp_fac_compra as com on com.id=dp.compra_id\r\nWHERE pro.\u0022name\u0022 =${a}\r\ngroup by pro.\u0022name\u0022 ,dp.cantidad,dp.valor_unitario,com.total,com.fecha;"
           },
           {
             "name" : "parameters",
@@ -2942,12 +2942,12 @@
           {
             "name" : "url",
             "type" : "String",
-            "value" : "jdbc:postgresql://localhost:5432/base"
+            "value" : "jdbc:postgresql://localhost:5432/bd"
           },
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "select com.fecha as \u0022Fecha\u0022,dp.producto as \u0022Código\u0022,pro.nombre as \u0022Descripción\u0022,SUM(dp.cantidad) as \u0022Cantidad\u0022 ,dp.valor_unitario as \u0022Precio unitario\u0022,com.total as \u0022Total de costo\u0022\r\nfrom scafp_inv_producto as pro join scafp_fac_detallecompra dp on dp.producto=pro.id\r\nJOIN scafp_fac_compra as com on com.id=dp.compra_id\r\nWHERE com.fecha BETWEEN to_date(${fecha1}, \u0027yyyy-mm-dd\u0027) AND to_date(${fecha2}, \u0027yyyy-mm-dd\u0027)\r\ngroup by dp.producto,dp.valor_unitario,pro.nombre,com.fecha,com.total;"
+            "value" : "select com.fecha as \u0022Fecha\u0022,dp.producto as \u0022Código\u0022,pro.\u0022name\u0022as \u0022Descripción\u0022,SUM(dp.cantidad) as \u0022Cantidad\u0022 ,dp.valor_unitario as \u0022Precio unitario\u0022,com.total as \u0022Total de costo\u0022\r\nfrom product_template pro join scafp_fac_detallecompra dp on dp.producto=pro.id\r\nJOIN scafp_fac_compra as com on com.id=dp.compra_id\r\nWHERE com.fecha BETWEEN to_date(${fecha1}, \u0027yyyy-mm-dd\u0027) AND to_date(${fecha2}, \u0027yyyy-mm-dd\u0027)\r\ngroup by dp.producto,dp.valor_unitario,pro.\u0022name\u0022,com.fecha,com.total;"
           },
           {
             "name" : "parameters",

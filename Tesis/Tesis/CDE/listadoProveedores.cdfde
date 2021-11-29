@@ -311,27 +311,27 @@
           {
             "name" : "filter",
             "type" : "Boolean",
-            "value" : "true"
+            "value" : "false"
           },
           {
             "name" : "info",
             "type" : "Boolean",
-            "value" : "true"
+            "value" : "false"
           },
           {
             "name" : "lengthChange",
             "type" : "Boolean",
-            "value" : "true"
+            "value" : "false"
           },
           {
             "name" : "paginate",
             "type" : "Boolean",
-            "value" : "true"
+            "value" : "false"
           },
           {
             "name" : "sort",
             "type" : "Boolean",
-            "value" : "true"
+            "value" : "false"
           },
           {
             "name" : "colSearchable",
@@ -2309,12 +2309,12 @@
           {
             "name" : "url",
             "type" : "String",
-            "value" : "jdbc:postgresql://localhost:5432/base"
+            "value" : "jdbc:postgresql://localhost:5432/bd"
           },
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "select pro.nombre_comercial as \u0022PROVEEDOR\u0022, com.total as \u0022Total/Factura\u0022\r\nfrom scafp_fac_proveedor as pro join scafp_fac_compra as com on pro.id=com.proveedor_id ;"
+            "value" : "select pro.display_name as \u0022PROVEEDOR\u0022, com.total as \u0022Total/Factura\u0022\r\nfrom res_partner as pro join scafp_fac_compra as com on pro.id=com.proveedor_id ;"
           },
           {
             "name" : "parameters",
@@ -2396,12 +2396,12 @@
           {
             "name" : "url",
             "type" : "String",
-            "value" : "jdbc:postgresql://localhost:5432/base"
+            "value" : "jdbc:postgresql://localhost:5432/bd"
           },
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "select pro.nombre_comercial as \u0022PROVEEDOR\u0022, com.descripcion as \u0022FACTURA\u0022, com.total as \u0022Total/Factura\u0022\r\nfrom scafp_fac_proveedor as pro join scafp_fac_compra as com on pro.id=com.proveedor_id \r\nwhere pro.nombre_comercial=${p};"
+            "value" : "select pro.display_name as \u0022PROVEEDOR\u0022, com.descripcion as \u0022FACTURA\u0022, com.total as \u0022Total/Factura\u0022\r\nfrom res_partner as pro join scafp_fac_compra as com on pro.id=com.proveedor_id \r\nwhere pro.display_name=${p};"
           },
           {
             "name" : "parameters",
@@ -2483,12 +2483,12 @@
           {
             "name" : "url",
             "type" : "String",
-            "value" : "jdbc:postgresql://localhost:5432/base"
+            "value" : "jdbc:postgresql://localhost:5432/bd"
           },
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "select id as \u0022CÓDIGO\u0022, nombre_comercial as \u0022PROVEEDOR\u0022, telefono1 as \u0022TELEFONO\u0022, telefono2 as \u0022CELULAR\u0022\r\nfrom scafp_fac_proveedor;"
+            "value" : "select id as \u0022CÓDIGO\u0022, display_name as \u0022PROVEEDOR\u0022, phone as \u0022TELEFONO\u0022, mobile as \u0022CELULAR\u0022\r\nfrom res_partner;"
           },
           {
             "name" : "parameters",

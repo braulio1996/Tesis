@@ -157,6 +157,12 @@
          <Url>jdbc:postgresql://localhost:5432/bd</Url>
          <User>brau</User>
       </Connection>
+      <Connection id="Querry_grafica" type="sql.jdbc">
+         <Driver>org.postgresql.driver</Driver>
+         <Pass>brau</Pass>
+         <Url>jdbc:postgresql://localhost:5432/bd</Url>
+         <User>brau</User>
+      </Connection>
       <Connection id="k1" type="kettle.TransFromFile">
          <KtrFile>../../load_demo3.ktr</KtrFile>
          <variables datarow-name="var1" variable-name="var1"/>
@@ -204,7 +210,7 @@ and eri.fecha BETWEEN ${fecha1} AND ${fecha2};]]></Query>
          <Parameter default="fecha1" name="fecha1" type="String"/>
          <Parameter default="fecha2" name="fecha2" type="String"/>
       </Parameters>
-      <Query><![CDATA[select  distinct eri.detalle as " ",(select  round(sum(a.debe::numeric)-sum(a.haber::numeric),2) as " " from estado_resultado_integral as a where a.id=eri.id)
+      <Query><![CDATA[select  distinct eri.detalle as " ",(select  round(sum(a.debe::numeric)-sum(a.haber::numeric),2) as " " from estado_resultado_integral as a where a.detalle =eri.detalle)
 from estado_resultado_integral as eri join scafp_conta_cuenta as scc on scc.id=eri.codigo_contable
 where scc.descripcion ='Efectivo Equivalente al efectivo' and eri.fecha BETWEEN ${fecha1} AND ${fecha2};]]></Query>
    </DataAccess>
@@ -230,7 +236,7 @@ and eri.fecha BETWEEN ${fecha1} AND ${fecha2};]]></Query>
          <Parameter default="fecha1" name="fecha1" type="String"/>
          <Parameter default="fecha2" name="fecha2" type="String"/>
       </Parameters>
-      <Query><![CDATA[select  distinct eri.detalle as " ",(select  round(sum(a.debe::numeric)-sum(a.haber::numeric),2) as " " from estado_resultado_integral as a where a.id=eri.id)
+      <Query><![CDATA[select  distinct eri.detalle as " ",(select  round(sum(a.debe::numeric)-sum(a.haber::numeric),2) as " " from estado_resultado_integral as a where a.detalle =eri.detalle)
 from estado_resultado_integral as eri join scafp_conta_cuenta as scc on scc.id=eri.codigo_contable
 where scc.descripcion ='Activo Financiero' and eri.fecha BETWEEN ${fecha1} AND ${fecha2};]]></Query>
    </DataAccess>
@@ -258,7 +264,7 @@ and eri.fecha BETWEEN ${fecha1} AND ${fecha2};]]></Query>
          <Parameter default="fecha1" name="fecha1" type="String"/>
          <Parameter default="fecha2" name="fecha2" type="String"/>
       </Parameters>
-      <Query><![CDATA[select  distinct eri.detalle as " ",(select  round(sum(a.debe::numeric)-sum(a.haber::numeric),2) as " " from estado_resultado_integral as a where a.id=eri.id)
+      <Query><![CDATA[select  distinct eri.detalle as " ",(select  round(sum(a.debe::numeric)-sum(a.haber::numeric),2) as " " from estado_resultado_integral as a where a.detalle =eri.detalle)
 from estado_resultado_integral as eri join scafp_conta_cuenta as scc on scc.id=eri.codigo_contable
 where scc.descripcion ='Inventario'
 and eri.fecha BETWEEN ${fecha1} AND ${fecha2};]]></Query>
@@ -287,7 +293,7 @@ and eri.fecha BETWEEN ${fecha1} AND ${fecha2};]]></Query>
          <Parameter default="fecha1" name="fecha1" type="String"/>
          <Parameter default="fecha2" name="fecha2" type="String"/>
       </Parameters>
-      <Query><![CDATA[select  distinct eri.detalle as " ",(select  round(sum(a.debe::numeric)-sum(a.haber::numeric),2) as " " from estado_resultado_integral as a where a.id=eri.id)
+      <Query><![CDATA[select  distinct eri.detalle as " ",(select  round(sum(a.debe::numeric)-sum(a.haber::numeric),2) as " " from estado_resultado_integral as a where a.detalle =eri.detalle)
 from estado_resultado_integral as eri join scafp_conta_cuenta as scc on scc.id=eri.codigo_contable
 where scc.descripcion ='Servicios y pagos anticipados ' 
 and eri.fecha BETWEEN ${fecha1} AND ${fecha2};]]></Query>
@@ -314,7 +320,7 @@ and eri.fecha BETWEEN ${fecha1} AND ${fecha2};]]></Query>
          <Parameter default="fecha1" name="fecha1" type="String"/>
          <Parameter default="fecha2" name="fecha2" type="String"/>
       </Parameters>
-      <Query><![CDATA[select  distinct eri.detalle as " ",(select  round(sum(a.debe::numeric)-sum(a.haber::numeric),2) as " " from estado_resultado_integral as a where a.id=eri.id)
+      <Query><![CDATA[select  distinct eri.detalle as " ",(select  round(sum(a.debe::numeric)-sum(a.haber::numeric),2) as " " from estado_resultado_integral as a where a.detalle =eri.detalle)
 from estado_resultado_integral as eri join scafp_conta_cuenta as scc on scc.id=eri.codigo_contable
 where scc.descripcion ='Propiedad Planta y Equipo' 
 and eri.fecha BETWEEN ${fecha1} AND ${fecha2};]]></Query>
@@ -343,7 +349,7 @@ and eri.fecha BETWEEN ${fecha1} AND ${fecha2};]]></Query>
          <Parameter default="fecha1" name="fecha1" type="String"/>
          <Parameter default="fecha2" name="fecha2" type="String"/>
       </Parameters>
-      <Query><![CDATA[select  distinct eri.detalle as " ",(select  abs(round(sum(a.debe::numeric)-sum(a.haber::numeric),2)) as " " from estado_resultado_integral as a where a.id=eri.id)
+      <Query><![CDATA[select  distinct eri.detalle as " ",(select  abs(round(sum(a.debe::numeric)-sum(a.haber::numeric),2)) as " " from estado_resultado_integral as a where a.detalle =eri.detalle)
 from estado_resultado_integral as eri join scafp_conta_cuenta as scc on scc.id=eri.codigo_contable
 where scc.descripcion ='Obligaciones Comerciales'
 and eri.fecha BETWEEN ${fecha1} AND ${fecha2};]]></Query>
@@ -374,7 +380,7 @@ group by r."15%participacion";]]></Query>
          <Parameter default="fecha1" name="fecha1" type="String"/>
          <Parameter default="fecha2" name="fecha2" type="String"/>
       </Parameters>
-      <Query><![CDATA[select  distinct eri.detalle as " ",(select  abs(round(sum(a.debe::numeric)-sum(a.haber::numeric),2)) as " " from estado_resultado_integral as a where a.id=eri.id)
+      <Query><![CDATA[select  distinct eri.detalle as " ",(select  abs(round(sum(a.debe::numeric)-sum(a.haber::numeric),2)) as " " from estado_resultado_integral as a where a.detalle =eri.detalle)
 from estado_resultado_integral as eri join scafp_conta_cuenta as scc on scc.id=eri.codigo_contable
 where scc.descripcion ='Obligaciones laborales'
 and eri.fecha BETWEEN ${fecha1} AND ${fecha2};]]></Query>
@@ -413,7 +419,7 @@ and eri.fecha BETWEEN ${fecha1} AND ${fecha2};]]></Query>
          <Parameter default="fecha1" name="fecha1" type="String"/>
          <Parameter default="fecha2" name="fecha2" type="String"/>
       </Parameters>
-      <Query><![CDATA[select  distinct eri.detalle as " ",(select  abs(round(sum(a.debe::numeric)-sum(a.haber::numeric),2)) as " " from estado_resultado_integral as a where a.id=eri.id)
+      <Query><![CDATA[select  distinct eri.detalle as " ",(select  abs(round(sum(a.debe::numeric)-sum(a.haber::numeric),2)) as " " from estado_resultado_integral as a where a.codigo_contable =scc.id)
 from estado_resultado_integral as eri join scafp_conta_cuenta as scc on scc.id=eri.codigo_contable
 where scc.descripcion ='Obligaciones con el IESS'
 and eri.fecha BETWEEN ${fecha1} AND ${fecha2};]]></Query>
@@ -464,7 +470,7 @@ and eri.fecha between ${fecha1} AND ${fecha2}]]></Query>
          <Parameter default="fecha1" name="fecha1" type="String"/>
          <Parameter default="fecha2" name="fecha2" type="String"/>
       </Parameters>
-      <Query><![CDATA[select  distinct eri.detalle as " ",(select  abs(round(sum(a.debe::numeric)-sum(a.haber::numeric),2)) as " " from estado_resultado_integral as a where a.id=eri.id)
+      <Query><![CDATA[select  distinct eri.detalle as " ",(select  abs(round(sum(a.debe::numeric)-sum(a.haber::numeric),2)) as " " from estado_resultado_integral as a where a.detalle =eri.detalle)
 from estado_resultado_integral as eri join scafp_conta_cuenta as scc on scc.id=eri.codigo_contable
 where scc.descripcion ='Capital'
 and eri.fecha between ${fecha1} AND ${fecha2}]]></Query>
@@ -523,6 +529,19 @@ and eri.fecha between ${fecha1} AND ${fecha2}]]></Query>
          <Parameter default="fecha2" name="fecha2" type="String"/>
       </Parameters>
       <Query><![CDATA[select 'Utilidad Y/o perdida del ejercicio' AS " ",r.utilidad_bruta as " " from resultados as r;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="Querry_grafica" id="Querry_grafica" type="sql">
+      <Name>Querry_grafica</Name>
+      <Cache duration="3600" enabled="false"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="fecha1" name="fecha1" type="String"/>
+         <Parameter default="fecha2" name="fecha2" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select  distinct eri.detalle as "IESS",(select  abs(round(sum(a.debe::numeric)-sum(a.haber::numeric),2)) as " " from estado_resultado_integral as a where a.codigo_contable =scc.id),'25% impuesto a ' || ' ' || ' la renta' AS "Fiscales ",(select r."25%impuesto" as " " from resultados as r)
+from estado_resultado_integral as eri join scafp_conta_cuenta as scc on scc.id=eri.codigo_contable
+where scc.descripcion ='Obligaciones con el IESS'
+and eri.fecha BETWEEN ${fecha1} AND ${fecha2};]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="k1" id="k1" type="kettle">
       <Name>k1</Name>

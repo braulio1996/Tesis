@@ -92,27 +92,27 @@
           {
             "name" : "filter",
             "type" : "Boolean",
-            "value" : "true"
+            "value" : "false"
           },
           {
             "name" : "info",
             "type" : "Boolean",
-            "value" : "true"
+            "value" : "false"
           },
           {
             "name" : "lengthChange",
             "type" : "Boolean",
-            "value" : "true"
+            "value" : "false"
           },
           {
             "name" : "paginate",
             "type" : "Boolean",
-            "value" : "true"
+            "value" : "false"
           },
           {
             "name" : "sort",
             "type" : "Boolean",
-            "value" : "true"
+            "value" : "false"
           },
           {
             "name" : "colSearchable",
@@ -2595,7 +2595,7 @@
           {
             "name" : "url",
             "type" : "String",
-            "value" : "jdbc:postgresql://localhost:5432/base"
+            "value" : "jdbc:postgresql://localhost:5432/bd"
           },
           {
             "name" : "query",
@@ -2682,7 +2682,7 @@
           {
             "name" : "url",
             "type" : "String",
-            "value" : "jdbc:postgresql://localhost:5432/base"
+            "value" : "jdbc:postgresql://localhost:5432/bd"
           },
           {
             "name" : "query",
@@ -2769,12 +2769,12 @@
           {
             "name" : "url",
             "type" : "String",
-            "value" : "jdbc:postgresql://localhost:5432/base"
+            "value" : "jdbc:postgresql://localhost:5432/bd"
           },
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "select pro.nombre_comercial as \u0022PROVEEDOR\u0022, com.total as \u0022TOTAL FACTURA\u0022,\r\nround(SUM(com.total-com.iva*0.3-com.sub_total_iva*0.01),2) as \u0022TOTAL A PAGAR\u0022\r\nfrom scafp_fac_compra as com join scafp_fac_proveedor as pro on com.proveedor_id=pro.id\r\nWHERE com.fecha BETWEEN to_date(${fecha1}, \u0027yyyy-mm-dd\u0027) AND to_date(${fecha2}, \u0027yyyy-mm-dd\u0027)\r\ngroup by com.fecha,com.codigo,com.total,com.total,pro.nombre_comercial,com.sub_total_iva,com.sub_total,com.iva,com.id\r\norder by com.id;"
+            "value" : "select pro.display_name as \u0022PROVEEDOR\u0022, com.total as \u0022TOTAL FACTURA\u0022,\r\nround(SUM(com.total-com.iva*0.3-com.sub_total_iva*0.01),2) as \u0022TOTAL A PAGAR\u0022\r\nfrom scafp_fac_compra as com join res_partner  as pro on com.proveedor_id=pro.id\r\nwhere tipo=\u0027proveedor\u0027 and com.fecha BETWEEN to_date(${fecha1}, \u0027yyyy-mm-dd\u0027) AND to_date(${fecha2}, \u0027yyyy-mm-dd\u0027)\r\ngroup by com.fecha,com.codigo,com.total,com.total,pro.display_name ,com.sub_total_iva,com.sub_total,com.iva,com.id\r\norder by com.id;"
           },
           {
             "name" : "parameters",
@@ -2856,12 +2856,12 @@
           {
             "name" : "url",
             "type" : "String",
-            "value" : "jdbc:postgresql://localhost:5432/base"
+            "value" : "jdbc:postgresql://localhost:5432/bd"
           },
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "select com.fecha as \u0022EMISIÓN\u0022,com.fecha_hasta as \u0022VENCE\u0022,pro.nombre_comercial as \u0022PROVEEDOR\u0022,com.ref_compra as \u0022NÚMERO\u0022,\r\nCASE\r\nWHEN sub_total\u003E0 or sub_total_iva\u003C0\r\nTHEN sub_total\r\nELSE sub_total_iva\r\nEND as \u0022V. COMPRA\u0022, com.sub_total_iva as \u0022SUB-IVA\u0022,com.sub_total as \u0022SUB-S/IVA\u0022,\r\ncom.iva as \u0022IVA\u0022,ROUND(SUM(com.sub_total_iva*0.01),2) as \u0022RET-FTE\u0022,\r\nROUND(SUM(com.iva*0.3),2) as \u0022RET-IVA\u0022, com.total as \u0022TOTAL FACTURA\u0022,\r\nround(SUM(com.total-com.iva*0.3-com.sub_total_iva*0.01),2) as \u0022TOTAL A PAGAR\u0022\r\nfrom scafp_fac_compra as com join scafp_fac_proveedor as pro on com.proveedor_id=pro.id\r\nWHERE com.fecha BETWEEN to_date(${fecha1}, \u0027yyyy-mm-dd\u0027) AND to_date(${fecha2}, \u0027yyyy-mm-dd\u0027)\r\ngroup by com.fecha,com.codigo,com.total,com.total,pro.nombre_comercial,com.sub_total_iva,com.sub_total,com.iva,com.id\r\norder by com.id;"
+            "value" : "select com.fecha as \u0022EMISIÓN\u0022,com.fecha_hasta as \u0022VENCE\u0022,pro.display_name  as \u0022PROVEEDOR\u0022,com.ref_compra as \u0022NÚMERO\u0022,\r\nCASE\r\nWHEN sub_total\u003E0 or sub_total_iva\u003C0\r\nTHEN sub_total\r\nELSE sub_total_iva\r\nEND as \u0022V. COMPRA\u0022, com.sub_total_iva as \u0022SUB-IVA\u0022,com.sub_total as \u0022SUB-S/IVA\u0022,\r\ncom.iva as \u0022IVA\u0022,ROUND(SUM(com.sub_total_iva*0.01),2) as \u0022RET-FTE\u0022,\r\nROUND(SUM(com.iva*0.3),2) as \u0022RET-IVA\u0022, com.total as \u0022TOTAL FACTURA\u0022,\r\nround(SUM(com.total-com.iva*0.3-com.sub_total_iva*0.01),2) as \u0022TOTAL A PAGAR\u0022\r\nfrom scafp_fac_compra as com join res_partner as pro on com.proveedor_id=pro.id\r\nWHERE com.fecha BETWEEN to_date(${fecha1}, \u0027yyyy-mm-dd\u0027) AND to_date(${fecha2}, \u0027yyyy-mm-dd\u0027)\r\ngroup by com.fecha,com.codigo,com.total,com.total,pro.display_name ,com.sub_total_iva,com.sub_total,com.iva,com.id\r\norder by com.id;"
           },
           {
             "name" : "parameters",
@@ -2943,12 +2943,12 @@
           {
             "name" : "url",
             "type" : "String",
-            "value" : "jdbc:postgresql://localhost:5432/base"
+            "value" : "jdbc:postgresql://localhost:5432/bd"
           },
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "select pro.nombre_comercial as \u0022PROVEEDOR\u0022, com.total as \u0022TOTAL FACTURA\u0022,\r\nround(SUM(com.total-com.iva*0.3-com.sub_total_iva*0.01),2) as \u0022TOTAL A PAGAR\u0022\r\nfrom scafp_fac_compra as com join scafp_fac_proveedor as pro on com.proveedor_id=pro.id\r\nwhere pro.nombre_comercial=${p}\r\ngroup by com.fecha,com.codigo,com.total,com.total,pro.nombre_comercial,com.sub_total_iva,com.sub_total,com.iva,com.id\r\norder by com.id;\r\n"
+            "value" : "select pro.display_name as \u0022PROVEEDOR\u0022, com.total as \u0022TOTAL FACTURA\u0022,\r\nround(SUM(com.total-com.iva*0.3-com.sub_total_iva*0.01),2) as \u0022TOTAL A PAGAR\u0022\r\nfrom scafp_fac_compra as com join res_partner as pro on com.proveedor_id=pro.id\r\nwhere pro.display_name=${p}\r\ngroup by com.fecha,com.codigo,com.total,com.total,pro.display_name,com.sub_total_iva,com.sub_total,com.iva,com.id\r\norder by com.id;\r\n"
           },
           {
             "name" : "parameters",

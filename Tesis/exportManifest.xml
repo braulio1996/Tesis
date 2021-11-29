@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <ns2:ExportManifest xmlns:ns2="http://www.pentaho.com/schema/">
-    <ExportManifestInformation exportDate="20-11-2021 12:35:58 COT" exportBy="admin" rootFolder="/public/" manifestVersion="2"/>
+    <ExportManifestInformation exportDate="29-11-2021 05:09:42 COT" exportBy="admin" rootFolder="/public/" manifestVersion="2"/>
     <ExportManifestEntity path="Tesis">
         <ExportManifestProperty>
             <EntityMetaData name="Tesis" createdDate="2021-05-25T17:57:36.999-05:00" isFolder="true" path="Tesis" isHidden="false" isSchedulable="true" locale="es_US" title="Tesis"/>
@@ -448,6 +448,18 @@
     <ExportManifestEntity path="Tesis/OLAP/OLAP1.xjpivot">
         <ExportManifestProperty>
             <EntityMetaData name="OLAP1.xjpivot" createdDate="2021-06-02T03:46:13.154-05:00" isFolder="false" path="Tesis/OLAP/OLAP1.xjpivot" isHidden="false" isSchedulable="true" locale="es_US" description="OLAP1.xjpivot" title="OLAP1.xjpivot"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="Tesis/OLAP/OLAP2.xjpivot">
+        <ExportManifestProperty>
+            <EntityMetaData name="OLAP2.xjpivot" createdDate="2021-11-29T16:42:03.723-05:00" isFolder="false" path="Tesis/OLAP/OLAP2.xjpivot" isHidden="false" isSchedulable="true" locale="es_US" description="OLAP2.xjpivot" title="OLAP2.xjpivot"/>
         </ExportManifestProperty>
         <ExportManifestProperty>
             <EntityAcl>
